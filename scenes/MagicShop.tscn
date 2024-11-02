@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4l7ashll3ajc"]
+
+[ext_resource type="Texture2D" uid="uid://bqbmetxs4ocse" path="res://art/png/Store.png" id="1_d6gew"]
+[ext_resource type="Script" path="res://magic_shop.gd" id="1_n68k7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4isb"]
+size = Vector2(159, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4gah"]
+
+[node name="MagicShop" type="Node2D"]
+script = ExtResource("1_n68k7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d6gew")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 17)
+shape = SubResource("RectangleShape2D_f4isb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-56, 50)
+shape = SubResource("RectangleShape2D_m4gah")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

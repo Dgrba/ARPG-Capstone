@@ -1,0 +1,12 @@
+{
+	"health": 100,
+	"max_health": 100,
+	"speed": 150,
+	"stats": {
+		"STRENGTH": 10,
+		"DEXTERITY": 10,
+		"CONSTITUTION": 10,
+		"AGILITY": 10,
+		"INTELLIGENCE": 10,
+		},
+}

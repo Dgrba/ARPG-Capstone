@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgqytxjbe0qvc"]
+
+[ext_resource type="AudioStream" uid="uid://cxq11nsi1omqs" path="res://music/dark-magic-music-143995.mp3" id="1_3nnac"]
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_3nnac")
+volume_db = -22.0
+autoplay = true
+bus = &"Music"

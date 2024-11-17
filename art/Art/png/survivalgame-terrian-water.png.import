@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgk6yisojq0y5"
-path="res://.godot/imported/survivalgame-terrian-water.png-4f1fb66b4ec698b8df054907bb943f69.ctex"
+path="res://.godot/imported/survivalgame-terrian-water.png-3448248521d8e41126603c65a4a674f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/png/survivalgame-terrian-water.png"
-dest_files=["res://.godot/imported/survivalgame-terrian-water.png-4f1fb66b4ec698b8df054907bb943f69.ctex"]
+source_file="res://art/Art/png/survivalgame-terrian-water.png"
+dest_files=["res://.godot/imported/survivalgame-terrian-water.png-3448248521d8e41126603c65a4a674f4.ctex"]
 
 [params]
 

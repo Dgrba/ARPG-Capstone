@@ -1,5 +1,4 @@
 extends Node
-var last_world_position = Vector2(0,0)
 var current_house = "" 
 
 var tokens = 0
@@ -12,13 +11,14 @@ var enemy_current_attack = false
 
 
 #Dungeon Stuff
+var number = 0
 var healing_factor = 0
 var difficulty: int = 1 # 1 = easy 2 =medium, 3= hard, 4 = nightmare
 var number_rooms = 0
-var room_order = ["res://world/game_map.tscn"]
+var room_order = []
 var room_entry = [
-				"res://world/dungeon/entryroom/entry_1.gd",
-				"res://world/dungeon/entryroom/entry_2.gd"
+				"res://world/dungeon/entryroom/entry1.tscn",
+				"res://world/dungeon/entryroom/entry2.tscn"
 				]
 				
 var room_intermediate = [

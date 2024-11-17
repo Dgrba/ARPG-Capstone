@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://4fuh8a3kgm74"]
 
 [ext_resource type="Script" path="res://ui/startMenu/start_menu.gd" id="1_n2na3"]
-[ext_resource type="Texture2D" uid="uid://bkv4q8tujtwje" path="res://Art/png/layer_1.png" id="2_inrw5"]
-[ext_resource type="FontFile" uid="uid://d1h8kbaa6huqg" path="res://Art/assets/fonts/upheavtt.ttf" id="3_c7pdp"]
+[ext_resource type="Texture2D" uid="uid://bkv4q8tujtwje" path="res://art/png/layer_1.png" id="2_inrw5"]
+[ext_resource type="FontFile" uid="uid://d1h8kbaa6huqg" path="res://art/assets/fonts/upheavtt.ttf" id="3_c7pdp"]
 [ext_resource type="PackedScene" uid="uid://e7f4lwi5yqfj" path="res://ui/startMenu/optionsMenu/options_menu.tscn" id="4_crsa3"]
 [ext_resource type="AudioStream" uid="uid://cxq11nsi1omqs" path="res://music/dark-magic-music-143995.mp3" id="5_xpwa8"]
 

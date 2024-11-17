@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1w8x6y56cqgq"
-path="res://.godot/imported/thaumaturgy_icon_clicked.png-849617555649468866b03175f7caa375.ctex"
+path="res://.godot/imported/thaumaturgy_icon_clicked.png-9ca0c286233af30c481cda89d8d64052.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/assets/icons/thaumaturgy_icon_clicked.png"
-dest_files=["res://.godot/imported/thaumaturgy_icon_clicked.png-849617555649468866b03175f7caa375.ctex"]
+source_file="res://art/Art/assets/icons/thaumaturgy_icon_clicked.png"
+dest_files=["res://.godot/imported/thaumaturgy_icon_clicked.png-9ca0c286233af30c481cda89d8d64052.ctex"]
 
 [params]
 

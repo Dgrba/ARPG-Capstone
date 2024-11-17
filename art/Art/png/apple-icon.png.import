@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciy020exaaiao"
-path="res://.godot/imported/apple-icon.png-cf476ce4e8c0f6d8213076b942cb62c1.ctex"
+path="res://.godot/imported/apple-icon.png-077d850b94b5d0c3d1309f4b91f9a9cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/png/apple-icon.png"
-dest_files=["res://.godot/imported/apple-icon.png-cf476ce4e8c0f6d8213076b942cb62c1.ctex"]
+source_file="res://art/Art/png/apple-icon.png"
+dest_files=["res://.godot/imported/apple-icon.png-077d850b94b5d0c3d1309f4b91f9a9cc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clcul0is5xe5p"
-path="res://.godot/imported/DarknessEffect.png-a276d07b5dffdb919f2e80d3e4d8cb15.ctex"
+path="res://.godot/imported/DarknessEffect.png-d8f7374d582722dbc2ca2bebe5699960.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/DarknessEffect.png"
-dest_files=["res://.godot/imported/DarknessEffect.png-a276d07b5dffdb919f2e80d3e4d8cb15.ctex"]
+source_file="res://art/Art/DarknessEffect.png"
+dest_files=["res://.godot/imported/DarknessEffect.png-d8f7374d582722dbc2ca2bebe5699960.ctex"]
 
 [params]
 

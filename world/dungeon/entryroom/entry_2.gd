@@ -15,3 +15,4 @@ func _on_exit_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: 
 	print("entered... ready to exit")
 	Global.tokens = Global.tokens + 1
 	get_tree().change_scene_to_file(Global.room_order.pop_front())
+	

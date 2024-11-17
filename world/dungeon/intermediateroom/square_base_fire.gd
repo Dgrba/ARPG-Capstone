@@ -1,4 +1,4 @@
-extends Room
+extends game_controller
 
 var ishidden = false
 var in_fire = false
@@ -11,7 +11,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 		
-
+func hide_door() -> void:
+	if enemies.is_empty() and ishidden == false:
+		ishidden = true
+		$Door.queue_free()
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	in_fire = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddrswwlqp4iti"
-path="res://.godot/imported/DifficultySelectBackground.png-5487c3dba3d94a2d88dcd9f1652c45b0.ctex"
+path="res://.godot/imported/DifficultySelectBackground.png-4c8dd518ef94daefb38f4170f14b5111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/DifficultySelectBackground.png"
-dest_files=["res://.godot/imported/DifficultySelectBackground.png-5487c3dba3d94a2d88dcd9f1652c45b0.ctex"]
+source_file="res://art/Art/DifficultySelectBackground.png"
+dest_files=["res://.godot/imported/DifficultySelectBackground.png-4c8dd518ef94daefb38f4170f14b5111.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-extends Room
+extends game_controller
 
 var ishidden = false
 var in_fire = false

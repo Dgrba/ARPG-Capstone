@@ -13,6 +13,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	handle_connecting_signals()
+	Global.last_location = Vector2(288,384)
 	if not music_stream_player.playing:
 		music_stream_player.play()
 

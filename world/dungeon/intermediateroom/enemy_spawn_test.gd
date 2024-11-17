@@ -1,7 +1,7 @@
-extends Room
+extends game_controller
 
 #enemy variables
-@onready var main: Room = get_parent()
+@onready var main: game_controller = get_parent()
 
 
 var enemy_1 := preload("res://entities/enemies/enemy_1.tscn")
@@ -12,7 +12,7 @@ var enemy_7 := preload("res://entities/enemies/enemy_7.tscn")
 var enemies_rand = ['a','b', 'c', 'd']
 #spawner variables
 var spawn_points := []
-var enemy_count = 0
+var enemy_count = Global.number
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(get_parent().name)
@@ -56,5 +56,4 @@ func _on_timer_timeout() -> void:
 			main.add_child(spawning_enemy);
 			main.enemies.append(spawning_enemy)
 		enemy_count = enemy_count - 1
-		
 	main.hide_door()

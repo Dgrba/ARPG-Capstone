@@ -16,16 +16,16 @@ func _process(delta: float) -> void:
 
 func _on_easy_button_pressed() -> void:
 	Global.difficulty = 1
-	get_tree().change_scene_to_file("res://world/dungeon/Dungeon_inside.tscn")
+	get_tree().change_scene_to_file(Global.room_entry.pick_random())
 
 func _on_medium_button_pressed() -> void:
 	Global.difficulty = 2
-	get_tree().change_scene_to_file("res://world/dungeon/Dungeon_inside.tscn")
+	get_tree().change_scene_to_file(Global.room_entry.pick_random())
 
 func _on_hard_button_pressed() -> void:
 	Global.difficulty = 3
-	get_tree().change_scene_to_file("res://world/dungeon/Dungeon_inside.tscn")
+	get_tree().change_scene_to_file(Global.room_entry.pick_random())
 
 func _on_nightmare_button_pressed() -> void:
 	Global.difficulty = 4
-	get_tree().change_scene_to_file("res://world/dungeon/Dungeon_inside.tscn")
+	get_tree().change_scene_to_file(Global.room_entry.pick_random())

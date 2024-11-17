@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://d1k828k1turw8"]
 
-[ext_resource type="Script" path="res://world/dungeon/dungeon_inside.gd" id="1_6y10b"]
-[ext_resource type="Texture2D" uid="uid://d128fv7sk02ta" path="res://Art/png/tilesets/floors/Damp Dungeon Tileset.png" id="1_7jv67"]
+[ext_resource type="Script" path="res://world/hub/interiors/dungeon_inside.gd" id="1_6y10b"]
+[ext_resource type="Texture2D" uid="uid://d128fv7sk02ta" path="res://art/png/tilesets/floors/Damp Dungeon Tileset.png" id="1_7jv67"]
 [ext_resource type="PackedScene" uid="uid://dg8ie22gykgq7" path="res://entities/player/player_test.tscn" id="2_w2qx4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg5ca"]
@@ -162,3 +162,5 @@ shape = SubResource("RectangleShape2D_bqiwf")
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="Exit" to="." method="_on_exit_body_exited"]
+[connection signal="body_shape_entered" from="Exit" to="." method="_on_exit_body_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

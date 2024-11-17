@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vstjkkg6w6s8"
-path="res://.godot/imported/survivalgame-enemy-slime.png-45ca30ca91ae13d826803d7ad63c7b77.ctex"
+path="res://.godot/imported/survivalgame-enemy-slime.png-ae57ca1e005231a84865460be421f756.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/png/survivalgame-enemy-slime.png"
-dest_files=["res://.godot/imported/survivalgame-enemy-slime.png-45ca30ca91ae13d826803d7ad63c7b77.ctex"]
+source_file="res://art/Art/png/survivalgame-enemy-slime.png"
+dest_files=["res://.godot/imported/survivalgame-enemy-slime.png-ae57ca1e005231a84865460be421f756.ctex"]
 
 [params]
 

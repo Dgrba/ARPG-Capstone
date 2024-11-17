@@ -2,7 +2,9 @@ extends Node
 
 #on entry/exit Room
 func entryroom_enter() -> void:
+	Global.last_location = Vector2(288,576)
 	difficulty_set()
+	enemies_set()
 	fire_damage_set()
 	spike_damage_set()
 	generate_room_array()
@@ -69,3 +71,15 @@ func healing_set() -> void:
 		Global.healing_factor = 0
 	else:
 		Global.healing_factor = 1
+		
+func enemies_set() -> void:
+	if Global.difficulty == 0:
+		Global.number = 2
+	elif Global.difficulty == 1:
+		Global.number = 4
+	elif Global.difficulty == 2:
+		Global.number = 8
+	elif Global.difficulty == 3:
+		Global.number = 10
+	else:
+		Global.number = 2

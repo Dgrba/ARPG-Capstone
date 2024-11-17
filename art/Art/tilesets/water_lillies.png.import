@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcqsdx28wbj3s"
-path="res://.godot/imported/water_lillies.png-3a110f0bf98ebd18874d34d29f185e59.ctex"
+path="res://.godot/imported/water_lillies.png-0ab7df894ee46d65955bb8b7de886bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/tilesets/water_lillies.png"
-dest_files=["res://.godot/imported/water_lillies.png-3a110f0bf98ebd18874d34d29f185e59.ctex"]
+source_file="res://art/Art/tilesets/water_lillies.png"
+dest_files=["res://.godot/imported/water_lillies.png-0ab7df894ee46d65955bb8b7de886bba.ctex"]
 
 [params]
 

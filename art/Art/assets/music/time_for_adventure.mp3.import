@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://m73dm4jhs3eq"
-path="res://.godot/imported/time_for_adventure.mp3-bf5fc5f9f812e7e16d34cfe2f348ff0a.mp3str"
+path="res://.godot/imported/time_for_adventure.mp3-13c847b7213ca1bbd06909a93ae3b4b0.mp3str"
 
 [deps]
 
-source_file="res://Art/assets/music/time_for_adventure.mp3"
-dest_files=["res://.godot/imported/time_for_adventure.mp3-bf5fc5f9f812e7e16d34cfe2f348ff0a.mp3str"]
+source_file="res://art/Art/assets/music/time_for_adventure.mp3"
+dest_files=["res://.godot/imported/time_for_adventure.mp3-13c847b7213ca1bbd06909a93ae3b4b0.mp3str"]
 
 [params]
 

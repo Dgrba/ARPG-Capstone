@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1r2dnbrs4wgg"
-path="res://.godot/imported/survivalgame-randomitems.png-4fb77f86b5ff4562808662afab78733f.ctex"
+path="res://.godot/imported/survivalgame-randomitems.png-14562d16a4e54b0758a345868ae2b7ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/png/survivalgame-randomitems.png"
-dest_files=["res://.godot/imported/survivalgame-randomitems.png-4fb77f86b5ff4562808662afab78733f.ctex"]
+source_file="res://art/Art/png/survivalgame-randomitems.png"
+dest_files=["res://.godot/imported/survivalgame-randomitems.png-14562d16a4e54b0758a345868ae2b7ea.ctex"]
 
 [params]
 

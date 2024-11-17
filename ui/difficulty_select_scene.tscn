@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbo1hyv7it7gk"]
 
-[ext_resource type="Texture2D" uid="uid://ddrswwlqp4iti" path="res://Art/DifficultySelectBackground.png" id="1_3f8jr"]
+[ext_resource type="Texture2D" uid="uid://ddrswwlqp4iti" path="res://art/DifficultySelectBackground.png" id="1_3f8jr"]
 [ext_resource type="Script" path="res://ui/difficulty_select_scene.gd" id="1_03sgn"]
-[ext_resource type="Texture2D" uid="uid://clcul0is5xe5p" path="res://Art/DarknessEffect.png" id="1_yiybu"]
+[ext_resource type="Texture2D" uid="uid://clcul0is5xe5p" path="res://art/DarknessEffect.png" id="1_yiybu"]
 
 [sub_resource type="Animation" id="Animation_adkew"]
 length = 0.001

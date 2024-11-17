@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxtyi1amtvxr4"
-path="res://.godot/imported/special houses.png-4583b060f23f0ac92f29648a26b72674.ctex"
+path="res://.godot/imported/special houses.png-06b90b33d41b0b761f370a3b58fcdee6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/png/special houses.png"
-dest_files=["res://.godot/imported/special houses.png-4583b060f23f0ac92f29648a26b72674.ctex"]
+source_file="res://art/Art/png/special houses.png"
+dest_files=["res://.godot/imported/special houses.png-06b90b33d41b0b761f370a3b58fcdee6.ctex"]
 
 [params]
 

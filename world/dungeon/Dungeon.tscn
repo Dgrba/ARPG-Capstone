@@ -1,8 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5c7qmoe3gtid"]
+[gd_scene load_steps=6 format=3 uid="uid://cobx24dhtrj0d"]
 
-[ext_resource type="Script" path="res://world/dungeon/dungeon.gd" id="1_kv28y"]
-[ext_resource type="Texture2D" uid="uid://b15mkgmpjqops" path="res://Art/png/Dungeon.png" id="1_upfds"]
-[ext_resource type="PackedScene" uid="uid://d1k828k1turw8" path="res://world/dungeon/Dungeon_inside.tscn" id="2_smu7e"]
+[ext_resource type="Texture2D" uid="uid://b15mkgmpjqops" path="res://art/png/Dungeon.png" id="1_upfds"]
+[ext_resource type="PackedScene" uid="uid://d1k828k1turw8" path="res://world/hub/interiors/Dungeon_inside.tscn" id="2_smu7e"]
+
+[sub_resource type="GDScript" id="GDScript_yputf"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+@export var scene: PackedScene
+
+
+func _on_area_2d_body_entered(body) -> void:
+	body.house = self
+
+
+func _on_area_2d_body_exited(body) -> void:
+	if body.house == self:
+		body.house = null
+
+func enter():
+	get_tree().change_scene_to_file(\"res://ui/difficulty_select_scene.tscn\")
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73egi"]
 size = Vector2(55, 57)
@@ -11,7 +31,7 @@ size = Vector2(55, 57)
 size = Vector2(20, 31)
 
 [node name="Dungeon" type="Node2D"]
-script = ExtResource("1_kv28y")
+script = SubResource("GDScript_yputf")
 scene = ExtResource("2_smu7e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

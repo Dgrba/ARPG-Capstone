@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhvv4ium6uhis"
-path="res://.godot/imported/03 Border 01.png-dc90e16f22930733ab64ab40a240d8af.ctex"
+path="res://.godot/imported/03 Border 01.png-1ccac19775df7d45fe400023a3e36763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/tilesets/borders/03 Border 01.png"
-dest_files=["res://.godot/imported/03 Border 01.png-dc90e16f22930733ab64ab40a240d8af.ctex"]
+source_file="res://art/Art/tilesets/borders/03 Border 01.png"
+dest_files=["res://.godot/imported/03 Border 01.png-1ccac19775df7d45fe400023a3e36763.ctex"]
 
 [params]
 

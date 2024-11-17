@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/hub/hub.gd" id="1_8inj8"]
 [ext_resource type="PackedScene" uid="uid://bisrc8085qsbk" path="res://ui/pauseMenu/pause_menu.tscn" id="2_ks2li"]
 [ext_resource type="Texture2D" uid="uid://c6bv65u5rpqun" path="res://art/Hub_Assets/HubWorld.png" id="3_i6yui"]
-[ext_resource type="Texture2D" uid="uid://c41n8bbfdfof8" path="res://Art/sprites/objects/objects.png" id="4_gktuw"]
+[ext_resource type="Texture2D" uid="uid://c41n8bbfdfof8" path="res://art/sprites/objects/objects.png" id="4_gktuw"]
 [ext_resource type="PackedScene" uid="uid://dg8ie22gykgq7" path="res://entities/player/player_test.tscn" id="11_4kb4s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_popya"]
@@ -331,7 +331,7 @@ tile_map_data = PackedByteArray("AAASAAkAAAAAAAoAAAAUAAkAAAABAAoAAAATAAkAAAABAAo
 tile_set = SubResource("TileSet_mljol")
 
 [node name="player_test" parent="CanvasLayer" instance=ExtResource("11_4kb4s")]
-position = Vector2(296, 404)
+position = Vector2(290, 392)
 
 [node name="dungeon_area" type="Area2D" parent="CanvasLayer"]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://calymj7xnrftr"
-path="res://.godot/imported/decor_16x16.png-e0226e96fd9897644bdc8aa2247636dc.ctex"
+path="res://.godot/imported/decor_16x16.png-c69fac09780d453229d630b0f720fc13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/tilesets/decor_16x16.png"
-dest_files=["res://.godot/imported/decor_16x16.png-e0226e96fd9897644bdc8aa2247636dc.ctex"]
+source_file="res://art/Art/tilesets/decor_16x16.png"
+dest_files=["res://.godot/imported/decor_16x16.png-c69fac09780d453229d630b0f720fc13.ctex"]
 
 [params]
 

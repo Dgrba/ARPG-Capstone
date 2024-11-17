@@ -18,62 +18,6 @@ size = Vector2(40, 40)
 z_index = 4096
 script = ExtResource("1_4apcr")
 
-[node name="Attack" type="CharacterBody2D" parent="."]
-position = Vector2(24, 0)
-script = ExtResource("3_vxk2w")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-shape = SubResource("RectangleShape2D_7lqmn")
-disabled = true
-
-[node name="AttackButton" type="Button" parent="Attack"]
-offset_right = 152.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 40
-text = "Attack"
-
-[node name="Panel" type="Panel" parent="Attack"]
-offset_left = 152.0
-offset_right = 192.0
-offset_bottom = 64.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
-
-[node name="Area2D" type="Area2D" parent="Attack/Panel"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Panel/Area2D"]
-position = Vector2(20, 32)
-shape = SubResource("RectangleShape2D_6gq2o")
-
-[node name="Defend" type="CharacterBody2D" parent="."]
-position = Vector2(24, 80)
-script = ExtResource("3_vxk2w")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Defend"]
-shape = SubResource("RectangleShape2D_7lqmn")
-disabled = true
-
-[node name="DefendButton" type="Button" parent="Defend"]
-offset_right = 152.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 40
-text = "Defend"
-
-[node name="Panel" type="Panel" parent="Defend"]
-offset_left = 152.0
-offset_right = 192.0
-offset_bottom = 64.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
-
-[node name="Area2D" type="Area2D" parent="Defend/Panel"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Defend/Panel/Area2D"]
-position = Vector2(20, 32)
-shape = SubResource("RectangleShape2D_6gq2o")
-
 [node name="Skills" type="CharacterBody2D" parent="."]
 position = Vector2(24, 160)
 script = ExtResource("3_vxk2w")
@@ -144,11 +88,11 @@ disabled = true
 offset_right = 152.0
 offset_bottom = 63.0
 theme_override_font_sizes/font_size = 40
-text = "Escape"
+text = "End Turn"
 
 [node name="Panel" type="Panel" parent="Escape"]
-offset_left = 152.0
-offset_right = 192.0
+offset_left = 183.0
+offset_right = 223.0
 offset_bottom = 64.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
@@ -159,12 +103,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
 position = Vector2(20, 32)
 shape = SubResource("RectangleShape2D_6gq2o")
 
-[connection signal="pressed" from="Attack/AttackButton" to="." method="_on_attack_button_pressed"]
-[connection signal="mouse_entered" from="Attack/Panel/Area2D" to="Attack" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Attack/Panel/Area2D" to="Attack" method="_on_area_2d_mouse_exited"]
-[connection signal="pressed" from="Defend/DefendButton" to="." method="_on_defend_button_pressed"]
-[connection signal="mouse_entered" from="Defend/Panel/Area2D" to="Defend" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Defend/Panel/Area2D" to="Defend" method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="Skills/SkillsButton" to="." method="_on_skills_button_pressed"]
 [connection signal="mouse_entered" from="Skills/Panel/Area2D" to="Skills" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Skills/Panel/Area2D" to="Skills" method="_on_area_2d_mouse_exited"]

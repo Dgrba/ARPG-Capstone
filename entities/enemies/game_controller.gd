@@ -20,9 +20,14 @@ func _on_player_end_turn():
 	player.start_turn()
 
 func register_enemies():
-	player.enemies = enemies
-	for enemy in enemies:
-		enemy.enemy_death.connect(_on_enemy_death)
+	if enemies.size() > 0:
+		player.in_combat = true
+		player.enemies = enemies
+		for enemy in enemies:
+			enemy.enemy_death.connect(_on_enemy_death)
+	else:
+		player.in_combat = false
+		player.enemies.clear()
 
 func _on_changed_enemies():
 	register_enemies()

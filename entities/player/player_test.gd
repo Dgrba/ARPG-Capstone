@@ -65,7 +65,12 @@ const MAGIC_DISTANCE = 32
 
 var active: bool = true
 # TODO trigger toggle when enter/exit combat
-var in_combat: bool = false
+var in_combat: bool = false: set = _on_change_combat_state
+
+func _on_change_combat_state(new_state: bool):
+	fighting_ui.visible = new_state
+	Global.in_combat = new_state
+	in_combat = new_state
 
 enum AnimationType {
 	Idle, Walk, Attack

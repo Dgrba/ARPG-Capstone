@@ -1,6 +1,5 @@
 [gd_scene load_steps=22 format=3 uid="uid://dl53t1bosplun"]
 
-
 [ext_resource type="Texture2D" uid="uid://oluayb5apcet" path="res://art/sprites/tilesets/grass.png" id="1_2yt2p"]
 [ext_resource type="Script" path="res://world/game_map.gd" id="1_i6l5v"]
 [ext_resource type="Texture2D" uid="uid://dsiu7y4mmimph" path="res://art/sprites/tilesets/plains.png" id="2_y14br"]

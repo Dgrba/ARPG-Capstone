@@ -27,14 +27,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_attack_button_pressed() -> void:
-	enemyHealthBar.value -= 10;
-	print("Player Attacked")
-
-func _on_defend_button_pressed() -> void:
-	print("Player Defended")
-
-
 func _on_skills_button_pressed() -> void:
 	if skillPanel.visible:
 		skillPanel.visible = false
@@ -44,8 +36,8 @@ func _on_skills_button_pressed() -> void:
 
 func _on_escape_button_pressed() -> void:
 	player.end_turn()
-	Global.in_combat = false
-	visible = false
+	#Global.in_combat = false
+	#visible = false
 
 
 #---- TO BE IMPLEMENTED: Give player exp, display winning screen and send the player

@@ -1,0 +1,469 @@
+[gd_scene load_steps=20 format=3 uid="uid://cxv6nbj0j87ye"]
+
+[ext_resource type="Theme" uid="uid://bxkefducy01g2" path="res://ui/startMenu/optionsMenu/skill_tree_border.tres" id="1_7jxbb"]
+[ext_resource type="Texture2D" uid="uid://ms0mmc2h3y26" path="res://art/assets/icons/vigor1_icon.jpg" id="1_aqtbj"]
+[ext_resource type="Script" path="res://ui/startMenu/optionsMenu/skill_button.gd" id="2_eijqc"]
+[ext_resource type="Texture2D" uid="uid://ca83tnvisiij4" path="res://art/assets/icons/vigor_icon_clicked.png" id="3_lx541"]
+[ext_resource type="Texture2D" uid="uid://dpqcb6nsp30uf" path="res://art/assets/icons/dash_icon.jpg" id="3_ofgtm"]
+[ext_resource type="Texture2D" uid="uid://ba4c155mp56f3" path="res://art/assets/icons/berserker_icon.jpg" id="4_wwxe3"]
+[ext_resource type="Texture2D" uid="uid://c61k46oal36ax" path="res://art/assets/icons/destructive_icon.png" id="5_ncocp"]
+[ext_resource type="FontFile" uid="uid://d1h8kbaa6huqg" path="res://art/assets/fonts/upheavtt.ttf" id="6_jdr5h"]
+[ext_resource type="Texture2D" uid="uid://tmpdvyrlsscw" path="res://art/assets/icons/dash_icon_clicked.png" id="6_ndpk3"]
+[ext_resource type="Texture2D" uid="uid://cuthmfihy0wcn" path="res://art/assets/icons/berserker_icon_clicked.png" id="8_8dk27"]
+[ext_resource type="Texture2D" uid="uid://c7smosw4v7eqf" path="res://art/assets/icons/destructive_icon_clicked.png" id="10_jnj1m"]
+[ext_resource type="Texture2D" uid="uid://dwug3de441l5j" path="res://art/assets/icons/resurrection_icon.png" id="11_x6h45"]
+[ext_resource type="Texture2D" uid="uid://blfhl5ybh3dl4" path="res://art/assets/icons/resurrection_icon_clicked.png" id="12_gog2l"]
+[ext_resource type="Texture2D" uid="uid://dbdxv3u05g6lt" path="res://art/assets/icons/evasion_icon.png" id="13_lo6it"]
+[ext_resource type="Texture2D" uid="uid://ocf6vrqd5gak" path="res://art/assets/icons/evasion_icon_clicked.png" id="14_tl8k7"]
+[ext_resource type="Texture2D" uid="uid://cauhj1v6vuhyi" path="res://art/assets/icons/resilient_icon.png" id="15_q3a3q"]
+[ext_resource type="Texture2D" uid="uid://dn5sm1q2kicup" path="res://art/assets/icons/resilient_icon_clicked.png" id="16_rhxqx"]
+[ext_resource type="Texture2D" uid="uid://8mxyduugocv6" path="res://art/assets/icons/thaumaturgy_icon.png" id="17_l446g"]
+[ext_resource type="Texture2D" uid="uid://b1w8x6y56cqgq" path="res://art/assets/icons/thaumaturgy_icon_clicked.png" id="18_df18y"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.0
+offset_top = 64.0
+offset_right = 118.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("1_7jxbb")
+
+[node name="VigorButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.170441
+anchor_top = 0.715617
+anchor_right = 0.171021
+anchor_bottom = 0.715617
+offset_left = -63.848
+offset_top = -63.72
+offset_right = 63.484
+offset_bottom = 64.28
+toggle_mode = true
+texture_normal = ExtResource("1_aqtbj")
+texture_pressed = ExtResource("3_lx541")
+texture_disabled = ExtResource("1_aqtbj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Vigor = "vigor"
+
+[node name="VigorLabel" type="Label" parent="Background/VigorButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Increases player's total HP +50"
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="DashButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396698
+anchor_top = 0.716358
+anchor_right = 0.396698
+anchor_bottom = 0.716358
+offset_left = -64.496
+offset_top = -64.2
+offset_right = 63.504
+offset_bottom = 63.8
+toggle_mode = true
+texture_normal = ExtResource("3_ofgtm")
+texture_pressed = ExtResource("6_ndpk3")
+texture_disabled = ExtResource("3_ofgtm")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Agility = "agility"
+
+[node name="DashLabel" type="Label" parent="Background/DashButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Doubles player's movement speed."
+
+[node name="BerserkerButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396385
+anchor_top = 0.314408
+anchor_right = 0.396385
+anchor_bottom = 0.314408
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 64.2639
+toggle_mode = true
+texture_normal = ExtResource("4_wwxe3")
+texture_pressed = ExtResource("8_8dk27")
+texture_disabled = ExtResource("4_wwxe3")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+
+[node name="BerserkerLabel" type="Label" parent="Background/BerserkerButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Adds an additional attack 
+available during player's turn."
+
+[node name="DestructiveButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.847774
+anchor_top = 0.314408
+anchor_right = 0.847774
+anchor_bottom = 0.315309
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 63.68
+toggle_mode = true
+texture_normal = ExtResource("5_ncocp")
+texture_pressed = ExtResource("10_jnj1m")
+texture_disabled = ExtResource("5_ncocp")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+
+[node name="DestructiveLabel" type="Label" parent="Background/DestructiveButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Increases player's attack damage."
+
+[node name="ResurrectionButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.622079
+anchor_top = 0.715642
+anchor_right = 0.622079
+anchor_bottom = 0.715642
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 64.2639
+toggle_mode = true
+texture_normal = ExtResource("11_x6h45")
+texture_pressed = ExtResource("12_gog2l")
+texture_disabled = ExtResource("11_x6h45")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+metadata/Destructive = &""
+
+[node name="ResurrectionLabel" type="Label" parent="Background/ResurrectionButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Gives player 1 extra life 
+upon death."
+
+[node name="EvasiveButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.622079
+anchor_top = 0.314408
+anchor_right = 0.622079
+anchor_bottom = 0.314408
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 64.2639
+toggle_mode = true
+texture_normal = ExtResource("13_lo6it")
+texture_pressed = ExtResource("14_tl8k7")
+texture_disabled = ExtResource("13_lo6it")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+metadata/Destructive = &""
+
+[node name="EvasiveLabel" type="Label" parent="Background/EvasiveButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Increases player's evasion chance."
+
+[node name="ResilientButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17069
+anchor_top = 0.314408
+anchor_right = 0.17069
+anchor_bottom = 0.314614
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 64.13
+toggle_mode = true
+texture_normal = ExtResource("15_q3a3q")
+texture_pressed = ExtResource("16_rhxqx")
+texture_disabled = ExtResource("15_q3a3q")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+metadata/Destructive = &""
+
+[node name="ResiliantLabel" type="Label" parent="Background/ResilientButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Increases player's damage reduction."
+
+[node name="ThaumaturgyButton" type="TextureButton" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.847774
+anchor_top = 0.715642
+anchor_right = 0.847774
+anchor_bottom = 0.715848
+offset_left = -64.1354
+offset_top = -63.7361
+offset_right = 63.8646
+offset_bottom = 64.13
+toggle_mode = true
+texture_normal = ExtResource("17_l446g")
+texture_pressed = ExtResource("18_df18y")
+texture_disabled = ExtResource("17_l446g")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_eijqc")
+metadata/_edit_use_anchors_ = true
+metadata/Berserker = &"berserker"
+metadata/Destructive = &""
+
+[node name="ThaumaturgyLabel" type="Label" parent="Background/ThaumaturgyButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Increases player's magic 
+attack damage."
+
+[node name="SkillButtonLabel" type="PanelContainer" parent="Background"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -47.5
+offset_right = 104.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/SkillButtonLabel"]
+layout_mode = 2
+
+[node name="SkillButtonTitle" type="Label" parent="Background/SkillButtonLabel/VBoxContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("6_jdr5h")
+theme_override_font_sizes/font_size = 29
+text = "Title"
+
+[node name="SkillButtonText" type="Label" parent="Background/SkillButtonLabel/VBoxContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "Text"
+
+[node name="TitleLabel" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 38.75
+offset_right = 82.0
+offset_bottom = 83.75
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_jdr5h")
+theme_override_font_sizes/font_size = 65
+text = "Skills"
+
+[node name="CurrencyLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.8361
+offset_top = -56.0243
+offset_right = 185.836
+offset_bottom = -11.0243
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_jdr5h")
+theme_override_font_sizes/font_size = 45
+text = "Credits: "
+
+[node name="BrokeLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.8361
+offset_top = -56.0243
+offset_right = 185.836
+offset_bottom = -11.0243
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_jdr5h")
+theme_override_font_sizes/font_size = 45
+text = "You cannot buy skills without any credits."
+
+[node name="BrokeTimer" type="Timer" parent="Background/BrokeLabel"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="mouse_entered" from="Background/VigorButton" to="Background/VigorButton" method="_on_mouse_entered" binds= [&"Vigor"]]
+[connection signal="mouse_exited" from="Background/VigorButton" to="Background/VigorButton" method="_on_mouse_exited" binds= [&"Vigor"]]
+[connection signal="toggled" from="Background/VigorButton" to="Background/VigorButton" method="_on_button_toggled" binds= [&"Vigor"]]
+[connection signal="mouse_entered" from="Background/DashButton" to="Background/DashButton" method="_on_mouse_entered" binds= [&"Dash"]]
+[connection signal="mouse_exited" from="Background/DashButton" to="Background/DashButton" method="_on_mouse_exited" binds= [&"Dash"]]
+[connection signal="toggled" from="Background/DashButton" to="Background/DashButton" method="_on_button_toggled" binds= [&"Dash"]]
+[connection signal="mouse_entered" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_mouse_entered" binds= [&"Berserker"]]
+[connection signal="mouse_exited" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_mouse_exited" binds= [&"Berserker"]]
+[connection signal="toggled" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_button_toggled" binds= [&"Berserker"]]
+[connection signal="mouse_entered" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_mouse_entered" binds= [&"Destructive"]]
+[connection signal="mouse_exited" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_mouse_exited" binds= [&"Destructive"]]
+[connection signal="toggled" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_button_toggled" binds= [&"Destructive"]]
+[connection signal="mouse_entered" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_mouse_entered" binds= [&"Resurrection"]]
+[connection signal="mouse_exited" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_mouse_exited" binds= [&"Resurrection"]]
+[connection signal="toggled" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_button_toggled" binds= [&"Resurrection"]]
+[connection signal="mouse_entered" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_mouse_entered" binds= [&"Evasive"]]
+[connection signal="mouse_exited" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_mouse_exited" binds= [&"Evasive"]]
+[connection signal="toggled" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_button_toggled" binds= [&"Evasive"]]
+[connection signal="mouse_entered" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_mouse_entered" binds= [&"Resilient"]]
+[connection signal="mouse_exited" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_mouse_exited" binds= [&"Resilient"]]
+[connection signal="toggled" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_button_toggled" binds= [&"Resilient"]]
+[connection signal="mouse_entered" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_mouse_entered" binds= [&"Thaumaturgy"]]
+[connection signal="mouse_exited" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_mouse_exited" binds= [&"Thaumaturgy"]]
+[connection signal="toggled" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_button_toggled" binds= [&"Thaumaturgy"]]

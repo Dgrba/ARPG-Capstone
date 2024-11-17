@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch61urwc566ro"]
+
+[ext_resource type="Texture2D" uid="uid://tohmo0d33tge" path="res://art/magic/magic_arc.png" id="1_712fw"]
+[ext_resource type="Script" path="res://entities/player/subresources/magic_spell.gd" id="2_0f833"]
+[ext_resource type="Texture2D" uid="uid://dbmxelmtegjqp" path="res://art/magic/swirly_particle_effects.png" id="3_xq4ri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg8d7"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur6ed"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rgpd"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxw4c"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3flg8"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u47uy"]
+atlas = ExtResource("3_xq4ri")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afld2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg8d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur6ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rgpd")
+}],
+"loop": true,
+"name": &"disperse_horizontal",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxw4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3flg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u47uy")
+}],
+"loop": true,
+"name": &"disperse_vertical",
+"speed": 6.0
+}]
+
+[node name="MagicSpell" type="Sprite2D"]
+visible = false
+texture = ExtResource("1_712fw")
+hframes = 4
+script = ExtResource("2_0f833")
+
+[node name="ParticleSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_afld2")
+animation = &"disperse_vertical"

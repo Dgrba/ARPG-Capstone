@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://be10dhqu1ovy2"]
+
+[ext_resource type="Script" path="res://entities/enemies/fire_ball.gd" id="1_uygb2"]
+[ext_resource type="Texture2D" uid="uid://c37kn207dlnam" path="res://art/rang/slime-icon.png" id="2_ucff3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxtwg"]
+radius = 6.08276
+
+[node name="fire_ball" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_uygb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_sxtwg")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.78279, 0.122829, 0.226607, 1)
+self_modulate = Color(0.753253, 0.00101816, 0, 1)
+position = Vector2(0.724392, -0.0393715)
+rotation = -1.77675
+scale = Vector2(1, 0.728)
+texture = ExtResource("2_ucff3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxv6nbj0j87ye"]
+
+[ext_resource type="Texture2D" uid="uid://8nm0pqymrruy" path="res://art/icon.svg" id="1_6vw4j"]
+[ext_resource type="Script" path="res://script/skill_button.gd" id="2_eijqc"]
+
+[node name="Skill Tree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_eijqc")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 54.0
+offset_right = 107.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="Vigor Button" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.352299
+anchor_top = 0.525802
+anchor_right = 0.352299
+anchor_bottom = 0.525802
+offset_left = -63.848
+offset_top = -63.72
+offset_right = 64.152
+offset_bottom = 64.28
+toggle_mode = true
+texture_normal = ExtResource("1_6vw4j")
+texture_pressed = ExtResource("1_6vw4j")
+texture_hover = ExtResource("1_6vw4j")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+metadata/Vigor = "Vigor"
+
+[node name="Vigor Text" type="Label" parent="Background/Vigor Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Vigor"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Agility  Button" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.593313
+anchor_top = 0.532716
+anchor_right = 0.593313
+anchor_bottom = 0.532716
+offset_left = -64.496
+offset_top = -64.2
+offset_right = 63.504
+offset_bottom = 63.8
+toggle_mode = true
+texture_normal = ExtResource("1_6vw4j")
+texture_pressed = ExtResource("1_6vw4j")
+texture_hover = ExtResource("1_6vw4j")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+metadata/Agility = "Agility"
+
+[node name="Agility Text" type="Label" parent="Background/Agility  Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Agility"
+
+[connection signal="mouse_entered" from="Background/Vigor Button" to="Background/Vigor Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Vigor Button" to="Background/Vigor Button" method="_on_mouse_exited"]
+[connection signal="toggled" from="Background/Vigor Button" to="Background/Vigor Button" method="_on_vigor_button_toggled"]

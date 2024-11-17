@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://chyex04yq8qqt"]
+
+[ext_resource type="Texture2D" uid="uid://csv57towpgxpb" path="res://art/characters/player.png" id="1_ahesv"]
+[ext_resource type="Script" path="res://entities/player/subresources/poses/pose.gd" id="2_e5sec"]
+
+[node name="Pose" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.490196)
+texture = ExtResource("1_ahesv")
+hframes = 6
+vframes = 10
+script = ExtResource("2_e5sec")

@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://64wu3fa7hl30"]
+
+[ext_resource type="Script" path="res://ui/fighting_scene.gd" id="1_4apcr"]
+[ext_resource type="Script" path="res://ui/DraggableButton.gd" id="3_vxk2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lqmn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8vpw"]
+bg_color = Color(0.745098, 0.184314, 0.219608, 0.392157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gq2o"]
+size = Vector2(40, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iota6"]
+size = Vector2(40, 40)
+
+[node name="FightingScene" type="Node2D"]
+z_index = 4096
+script = ExtResource("1_4apcr")
+
+[node name="Attack" type="CharacterBody2D" parent="."]
+position = Vector2(24, 0)
+script = ExtResource("3_vxk2w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+shape = SubResource("RectangleShape2D_7lqmn")
+disabled = true
+
+[node name="AttackButton" type="Button" parent="Attack"]
+offset_right = 152.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 40
+text = "Attack"
+
+[node name="Panel" type="Panel" parent="Attack"]
+offset_left = 152.0
+offset_right = 192.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
+
+[node name="Area2D" type="Area2D" parent="Attack/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Panel/Area2D"]
+position = Vector2(20, 32)
+shape = SubResource("RectangleShape2D_6gq2o")
+
+[node name="Defend" type="CharacterBody2D" parent="."]
+position = Vector2(24, 80)
+script = ExtResource("3_vxk2w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Defend"]
+shape = SubResource("RectangleShape2D_7lqmn")
+disabled = true
+
+[node name="DefendButton" type="Button" parent="Defend"]
+offset_right = 152.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 40
+text = "Defend"
+
+[node name="Panel" type="Panel" parent="Defend"]
+offset_left = 152.0
+offset_right = 192.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
+
+[node name="Area2D" type="Area2D" parent="Defend/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Defend/Panel/Area2D"]
+position = Vector2(20, 32)
+shape = SubResource("RectangleShape2D_6gq2o")
+
+[node name="Skills" type="CharacterBody2D" parent="."]
+position = Vector2(24, 160)
+script = ExtResource("3_vxk2w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills"]
+shape = SubResource("RectangleShape2D_7lqmn")
+disabled = true
+
+[node name="SkillsButton" type="Button" parent="Skills"]
+offset_right = 152.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 40
+text = "Skills"
+
+[node name="Panel" type="Panel" parent="Skills"]
+offset_left = 152.0
+offset_right = 192.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
+
+[node name="Area2D" type="Area2D" parent="Skills/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Panel/Area2D"]
+position = Vector2(20, 32)
+shape = SubResource("RectangleShape2D_6gq2o")
+
+[node name="SkillPanel" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(-488, 16)
+script = ExtResource("3_vxk2w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkillPanel"]
+shape = SubResource("RectangleShape2D_7lqmn")
+disabled = true
+
+[node name="MainPanel" type="Panel" parent="SkillPanel"]
+offset_right = 400.0
+offset_bottom = 240.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="SkillPanel"]
+offset_left = 360.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 240.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
+
+[node name="Area2D" type="Area2D" parent="SkillPanel/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkillPanel/Panel/Area2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_iota6")
+
+[node name="Escape" type="CharacterBody2D" parent="."]
+position = Vector2(24, 240)
+script = ExtResource("3_vxk2w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escape"]
+shape = SubResource("RectangleShape2D_7lqmn")
+disabled = true
+
+[node name="EscapeButton" type="Button" parent="Escape"]
+offset_right = 152.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 40
+text = "Escape"
+
+[node name="Panel" type="Panel" parent="Escape"]
+offset_left = 152.0
+offset_right = 192.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8vpw")
+
+[node name="Area2D" type="Area2D" parent="Escape/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escape/Panel/Area2D"]
+position = Vector2(20, 32)
+shape = SubResource("RectangleShape2D_6gq2o")
+
+[connection signal="pressed" from="Attack/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="mouse_entered" from="Attack/Panel/Area2D" to="Attack" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Attack/Panel/Area2D" to="Attack" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Defend/DefendButton" to="." method="_on_defend_button_pressed"]
+[connection signal="mouse_entered" from="Defend/Panel/Area2D" to="Defend" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Defend/Panel/Area2D" to="Defend" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Skills/SkillsButton" to="." method="_on_skills_button_pressed"]
+[connection signal="mouse_entered" from="Skills/Panel/Area2D" to="Skills" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Skills/Panel/Area2D" to="Skills" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SkillPanel/Panel/Area2D" to="SkillPanel" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SkillPanel/Panel/Area2D" to="SkillPanel" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Escape/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="mouse_entered" from="Escape/Panel/Area2D" to="Escape" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Escape/Panel/Area2D" to="Escape" method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca4bmsvv7q6yr"]
+
+[ext_resource type="Script" path="res://entities/enemies/spawners/enemy_spawner_1.gd" id="1_nfmkl"]
+
+[node name="EnemySpawner1" type="Node2D"]
+script = ExtResource("1_nfmkl")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(31, 47)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

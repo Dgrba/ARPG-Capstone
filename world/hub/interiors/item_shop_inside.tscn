@@ -219,7 +219,7 @@ tile_set = SubResource("TileSet_gy5k7")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="player_test" parent="." instance=ExtResource("3_h4caa")]
-position = Vector2(0, 184)
+position = Vector2(0, 176)
 
 [node name="exit" type="Area2D" parent="."]
 collision_layer = 0
@@ -230,7 +230,7 @@ position = Vector2(0, 187)
 shape = SubResource("RectangleShape2D_6tyv0")
 
 [node name="TownExit" parent="." instance=ExtResource("6_i837j")]
-position = Vector2(-12, 96)
+position = Vector2(-17, 94)
 
 [connection signal="area_shape_entered" from="exit" to="." method="_on_exit_area_shape_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

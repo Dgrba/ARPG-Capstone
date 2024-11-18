@@ -12,13 +12,14 @@ var enemy_7 := preload("res://entities/enemies/enemy_7.tscn")
 var enemies_rand = ['a','b', 'c', 'd']
 #spawner variables
 var spawn_points := []
-var enemy_count = Global.number
+var enemy_count = Global.number * 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(get_parent().name)
 	
 	if get_parent().name == "square_base_large" or get_parent().name == "square_base" or get_parent().name == "circle_base" :
-		enemy_count = enemy_count * 2
+		print("Howdy")
+		enemy_count = Global.number * 2 * 0
 		
 	for i in get_children():
 		if i is Marker2D:

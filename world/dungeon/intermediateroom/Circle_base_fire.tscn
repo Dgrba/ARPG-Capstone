@@ -168,7 +168,7 @@ tile_set = SubResource("TileSet_c4sjf")
 position = Vector2(0, -144)
 
 [node name="player_test" parent="." instance=ExtResource("5_gabl1")]
-position = Vector2(0, 120)
+position = Vector2(0, 118)
 
 [node name="enemy_spawn_large_square_room" parent="." instance=ExtResource("8_d5sl4")]
 
@@ -180,10 +180,6 @@ shape = SubResource("RectangleShape2D_nx088")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="fire"]
 position = Vector2(56, 60)
-shape = SubResource("RectangleShape2D_nx088")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="fire"]
-position = Vector2(0, 119)
 shape = SubResource("RectangleShape2D_nx088")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="fire"]
@@ -256,10 +252,6 @@ shape = SubResource("RectangleShape2D_nx088")
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="fire"]
 position = Vector2(-40, 12)
-shape = SubResource("RectangleShape2D_nx088")
-
-[node name="CollisionShape2D25" type="CollisionShape2D" parent="fire"]
-position = Vector2(0, 119)
 shape = SubResource("RectangleShape2D_nx088")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="fire"]

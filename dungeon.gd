@@ -12,13 +12,13 @@ func entryroom_enter() -> void:
 
 #Room Generation
 func difficulty_set() -> void:
-	if Global.difficulty == 0:
+	if Global.difficulty == 1:
 		Global.number_rooms = 2
-	elif Global.difficulty == 1:
-		Global.number_rooms = 4
 	elif Global.difficulty == 2:
-		Global.number_rooms = 6
+		Global.number_rooms = 4
 	elif Global.difficulty == 3:
+		Global.number_rooms = 6
+	elif Global.difficulty == 4:
 		Global.number_rooms = 10
 	else:
 		Global.number_rooms = 3
@@ -37,49 +37,49 @@ func print_array() -> void:
 #Room Parameters
 
 func fire_damage_set() -> void:
-	if Global.difficulty == 0:
+	if Global.difficulty == 1:
 		Global.fire_damage = 10
-	elif Global.difficulty == 1:
-		Global.fire_damage = 25
 	elif Global.difficulty == 2:
-		Global.fire_damage = 30
+		Global.fire_damage = 25
 	elif Global.difficulty == 3:
+		Global.fire_damage = 30
+	elif Global.difficulty == 4:
 		Global.fire_damage = 35
 	else:
 		Global.fire_damage = 10
 		
 func spike_damage_set() -> void:
-	if Global.difficulty == 0:
+	if Global.difficulty == 1:
 		Global.spike_damage = 5
-	elif Global.difficulty == 1:
-		Global.spike_damage = 10
 	elif Global.difficulty == 2:
-		Global.spike_damage = 15
+		Global.spike_damage = 10
 	elif Global.difficulty == 3:
+		Global.spike_damage = 15
+	elif Global.difficulty == 4:
 		Global.spike_damage = 20
 	else:
 		Global.spike_damage = 10
 
 func healing_set() -> void:
-	if Global.difficulty == 0:
+	if Global.difficulty == 1:
 		Global.healing_factor = 1
-	elif Global.difficulty == 1:
-		Global.healing_factor = .75
 	elif Global.difficulty == 2:
-		Global.healing_factor = .50
+		Global.healing_factor = .75
 	elif Global.difficulty == 3:
+		Global.healing_factor = .50
+	elif Global.difficulty == 4:
 		Global.healing_factor = 0
 	else:
 		Global.healing_factor = 1
 		
 func enemies_set() -> void:
-	if Global.difficulty == 0:
+	if Global.difficulty == 1:
 		Global.number = 2
-	elif Global.difficulty == 1:
-		Global.number = 4
 	elif Global.difficulty == 2:
-		Global.number = 8
+		Global.number = 4
 	elif Global.difficulty == 3:
+		Global.number = 8
+	elif Global.difficulty == 4:
 		Global.number = 10
 	else:
 		Global.number = 2

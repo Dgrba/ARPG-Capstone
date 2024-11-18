@@ -169,16 +169,12 @@ position = Vector2(0, -112)
 [node name="enemy_spawn_large_square_room" parent="." instance=ExtResource("7_tj6k7")]
 
 [node name="player_test" parent="." instance=ExtResource("5_iy56e")]
-position = Vector2(0, 90)
+position = Vector2(45, -14)
 
 [node name="fire" type="Area2D" parent="."]
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="fire"]
 position = Vector2(56, 60)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="fire"]
-position = Vector2(0, 119)
 shape = SubResource("RectangleShape2D_5iaeu")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="fire"]
@@ -303,10 +299,6 @@ shape = SubResource("RectangleShape2D_5iaeu")
 
 [node name="CollisionShape2D56" type="CollisionShape2D" parent="fire"]
 position = Vector2(56, 91)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D57" type="CollisionShape2D" parent="fire"]
-position = Vector2(0, 121)
 shape = SubResource("RectangleShape2D_5iaeu")
 
 [node name="Timer" type="Timer" parent="fire"]

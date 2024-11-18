@@ -20,7 +20,9 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 
 func _on_timer_timeout() -> void:
 	if in_fire == true:
+		#$player_test.update_stats_menu()
 		$player_test.healthComponent.modify_health(-Global.fire_damage)
+		print("player health is")
 		print($player_test.healthComponent.get_health())
 
 func hide_door() -> void:

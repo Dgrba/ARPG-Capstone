@@ -23,7 +23,7 @@ func _on_body_entered(body: Node2D) -> void:
 	# Check if the body has a method or property to identify it as the player
 	if body.has_method("player") or body.name == "Player":
 		# Optional: Apply damage to the player if needed
-		print("Arrow hit the player!")
+		body.healthComponent.modify_health(-5)
 		queue_free()  # Remove the arrow from the scene
 	else:
 		print("Arrow miss hit")

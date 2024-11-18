@@ -147,9 +147,11 @@ func get_or_default(json: JSON, target: String, default):
 
 func _ready() -> void:
 	load_state()
+	update_stats_menu()
 	setHouse(null)
 
 func _on_move_end(dist: Vector2 = Vector2.ZERO, backward = true):
+	update_stats_menu()
 	play_idle_anim()
 	queue_redraw()
 

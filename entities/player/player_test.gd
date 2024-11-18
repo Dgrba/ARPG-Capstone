@@ -408,6 +408,7 @@ func load_state(SavePath: String = SaveFile):
 	stats.set_stat(StatComponent.StatList.CONSTITUTION, config.get_value("Stats", "Constitution"))
 	stats.set_stat(StatComponent.StatList.AGILITY, config.get_value("Stats", "Agility"))
 	stats.set_stat(StatComponent.StatList.INTELLIGENCE, config.get_value("Stats", "Intelligence"))
+	stats.set_class_name(config.get_value("Stats", "Class"))
 	
 	actionComponent.max_action = config.get_value("Moves", "ActionMax")
 	actionComponent.max_bonus = config.get_value("Moves", "BonusMax")

@@ -16,8 +16,8 @@ func _physics_process(delta):
 		play_movement_animation()
 	#else:
 		#wander_around(delta)  # Trigger direction change and reset time if needed
-	damage()
-	update_health()
+	#damage()
+	#update_health()
 	
 	
 	# Only wander if the enemy is not chasing the player

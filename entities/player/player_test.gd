@@ -146,8 +146,9 @@ func get_or_default(json: JSON, target: String, default):
 	return res
 
 func _ready() -> void:
+	statComponent.hide()
 	load_state()
-	update_stats_menu()
+	#update_stats_menu()
 	setHouse(null)
 
 func _on_move_end(dist: Vector2 = Vector2.ZERO, backward = true):
@@ -217,19 +218,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("debug"):
 		debug()
 
-
-
 func debug():
-	if !in_combat:
-		in_combat = true
-	#if active:
-		#healthComponent.set_health(0)
-	#else:
-		#healthComponent.set_health(healthComponent._maxHealth)
-	turn_end.emit()
-	# in game_map this happens automatically (when enemy turns end)
-	actionComponent.reset_allowed_actions()
-	player_turn = true
+	if active:
+		healthComponent.set_health(0)
+	else:
+		healthComponent.set_health(healthComponent._maxHealth)
 
 # logic for dealing with player death; connected to death signal in _ready()
 func _on_player_death():
@@ -276,10 +269,22 @@ func attack(action: AttackAction, shadow: bool = true):
 		dist = attack_melee(MELEE_DISTANCE, shadow)
 	var damage: int = _attack_damage()
 	for enemy in enemies:
-		if position.x - enemy.position.x <= dist.x + 16 && position.y - enemy.position.y <= 16 || position.y - enemy.position.y <= dist.y + 16 && position.x - enemy.position.x <= 16:
+		if in_range(enemy, dist):
+			print("enemy health before: ", enemy.health)
+			print("damage: ", damage)
 			enemy.health -= damage
+			print("enemy health after: ", enemy.health)
 			hits.push_back(enemy)
 	action.set_undo(hits, damage)
+
+func in_range(enemy: Enemy, dist: Vector2) -> bool:
+	if enemy.position.x < position.x + 16 || enemy.position.x > position.x - 16:
+		if abs(position.y - enemy.position.y) <= dist.y + 16:
+			return true
+	if enemy.position.y < position.y + 16 || enemy.position.y > position.y - 16:
+		if abs(position.x - enemy.position.x) <= dist.x + 16:
+			return true
+	return false
 
 func _attack_damage() -> int:
 	if is_magic():
@@ -407,6 +412,7 @@ func save_state():
 	config.save(SaveFile)
 
 func load_state(SavePath: String = SaveFile):
+	print("loading from ", SavePath)
 	var config := ConfigFile.new()
 	var err = config.load(SavePath)
 	
@@ -416,12 +422,14 @@ func load_state(SavePath: String = SaveFile):
 		return
 	
 	var stats = get_node("StatComponent") as StatComponent
-	stats.set_stat(StatComponent.StatList.STRENGTH, config.get_value("Stats", "Strength", 0))
-	stats.set_stat(StatComponent.StatList.DEXTERITY, config.get_value("Stats", "Dexterity", 0))
-	stats.set_stat(StatComponent.StatList.CONSTITUTION, config.get_value("Stats", "Constitution", 0))
-	stats.set_stat(StatComponent.StatList.AGILITY, config.get_value("Stats", "Agility", 0))
-	stats.set_stat(StatComponent.StatList.INTELLIGENCE, config.get_value("Stats", "Intelligence", 0))
+	stats.set_stat(StatComponent.StatList.STRENGTH, config.get_value("Stats", "Strength"))
+	stats.set_stat(StatComponent.StatList.DEXTERITY, config.get_value("Stats", "Dexterity"))
+	stats.set_stat(StatComponent.StatList.CONSTITUTION, config.get_value("Stats", "Constitution"))
+	stats.set_stat(StatComponent.StatList.AGILITY, config.get_value("Stats", "Agility"))
+	stats.set_stat(StatComponent.StatList.INTELLIGENCE, config.get_value("Stats", "Intelligence"))
 	stats.set_class_name(config.get_value("Stats", "Class", "Melee"))
+	print(stats.get_stats_all())
+	print(stats._stats)
 	
 	actionComponent.max_action = config.get_value("Moves", "MaxAction", 1)
 	actionComponent.max_bonus = config.get_value("Moves", "MaxBonus", 1)

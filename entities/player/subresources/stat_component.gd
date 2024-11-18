@@ -25,13 +25,8 @@ var _stats: Dictionary
 var _class: Class
 
 func _ready():
-	_stats = {
-		StatList.STRENGTH: 0,
-		StatList.DEXTERITY: 0,
-		StatList.CONSTITUTION: 0,
-		StatList.AGILITY: 0,
-		StatList.INTELLIGENCE: 0,
-	}
+	print(_stats)
+	pass
 
 func set_class_name(classname):
 	_class = Class.Melee
@@ -51,7 +46,8 @@ func get_class_string() -> String:
 	return "Melee"
 
 func stat_from_string(str: String) -> StatList:
-	match str.to_lower:
+	str = str.strip_edges().to_lower()
+	match str.to_lower():
 		"strength":
 			return StatList.STRENGTH
 		"dexterity":
@@ -68,7 +64,9 @@ func stat_from_string(str: String) -> StatList:
 # if parameter target is not int, StatList or String returns "ERROR"
 # otherwise returns the interger value of the target stat
 func get_stat(target):
+	print(get_stats_all())
 	if typeof(target) == TYPE_STRING and _stats.has(stat_from_string(target)):
+		print("stat ", target, " is ", _stats[stat_from_string(target)])
 		return _stats[stat_from_string(target)]
 	elif typeof(target) == TYPE_INT and StatList.keys().has(target):
 		return _stats[StatList.keys()[target]]
@@ -89,7 +87,7 @@ func get_stats_all():
 	return tmp
 
 # for manual initialization or hard scripting
-func set_stat(target: StatList, value: int):
+func set_stat(target, value: int):
 	value = _on_stat_changed(target, value)
 	_stats[StatList.keys()[target]] = value
 
@@ -105,6 +103,9 @@ func modify_stat(target: StatList, value: int):
 # this function is why I made _stats private
 # it returns an approved value for target, after sanity checking
 func _on_stat_changed(target: StatList, value: int) -> int:
+	if !_stats.has(target):
+		_stats[target] = value
+		return value
 	var current_value = _stats[target]
 	if value < 1 && current_value != 0:
 		stat_hit_zero.emit(target)

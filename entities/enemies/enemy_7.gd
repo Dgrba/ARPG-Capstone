@@ -35,8 +35,8 @@ func _physics_process(delta):
 		position += wander_direction * speed * delta
 		wander_time -= delta
 		play_movement_animation()
-	damage()
-	update_health()
+	#damage()
+	#update_health()
 	#wander_around(delta)
 	#player_chases()
 	

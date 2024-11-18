@@ -202,7 +202,7 @@ layer_2/tile_data = PackedInt32Array(393220, 3, 5, 851980, 3, 5, 1179653, 3, 5, 
 position = Vector2(1022, 289)
 
 [node name="enemy_3" parent="." instance=ExtResource("11_wf3e6")]
-position = Vector2(892, 285)
+position = Vector2(962, 292)
 
 [node name="enemy_5" parent="." instance=ExtResource("10_nf0kg")]
 position = Vector2(452, 323)
@@ -211,7 +211,7 @@ position = Vector2(452, 323)
 position = Vector2(37, 230)
 
 [node name="enemy_7" parent="." instance=ExtResource("12_rblsl")]
-position = Vector2(1090, 285)
+position = Vector2(1101, 234)
 
 [node name="range_enemy" parent="." instance=ExtResource("13_mdlfl")]
-position = Vector2(1022, 178)
+position = Vector2(968, 142)

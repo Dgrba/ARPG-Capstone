@@ -6,8 +6,8 @@ func _ready():
 	$AnimatedSprite2D.play("side_idle")  # Adjust the animation name to your idle animation
 
 func _physics_process(delta):
-	damage()
-	update_health()
+	#damage()
+	#update_health()
   
 	if wander_time > 0:
 		position += wander_direction * speed * delta

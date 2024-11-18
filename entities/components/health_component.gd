@@ -3,7 +3,7 @@ class_name HealthComponent
 
 signal death
 signal resurrection
-
+signal health_changed
 
 var _health: int: set = _on_set_health
 var _maxHealth: int: set = _on_set_maxHealth
@@ -46,3 +46,4 @@ func _on_set_health(value: int):
 	if value > 0 && _health == 0:
 		resurrection.emit()
 	_health = value
+	health_changed.emit()

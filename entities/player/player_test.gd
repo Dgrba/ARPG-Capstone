@@ -18,7 +18,7 @@ var attack_action = false  # anim
 const SPEED = 100.0
 var current_direction = "move_down"
 
-@onready var status_menu: Control = $StatsMenu as Control  # More robust type casting for status menu
+@export var status_menu: Control
 @onready var fighting_ui = $FightingScene
 
 var EXP = 10
@@ -79,23 +79,7 @@ enum AnimationType {
 func start_turn():
 	player_turn = true
 	actionComponent.reset_allowed_actions()
-	# Connect health component signal
-	#healthComponent.health_changed.connect(_on_health_changed)
-
-	# Initialize player stats dictionary
-	var initial_stats = {
-		"health": healthComponent.get_health(),
-		"max_health": healthComponent.get_max_health(),
-		"allowedActions": actionComponent.allowedActions,
-		"stats": {
-			"STRENGTH": statComponent.get_stat("STRENGTH"),
-			"DEXTERITY": statComponent.get_stat("DEXTERITY"),
-			"CONSTITUTION": statComponent.get_stat("CONSTITUTION"),
-			"AGILITY": statComponent.get_stat("AGILITY"),
-			"INTELLIGENCE": statComponent.get_stat("INTELLIGENCE")
-		}
-	}
-	status_menu.update_stats(initial_stats)
+	#update_stats_menu()
 
 # Function to update the stats menu dynamically
 func update_stats_menu() -> void:
@@ -146,9 +130,8 @@ func get_or_default(json: JSON, target: String, default):
 	return res
 
 func _ready() -> void:
-	statComponent.hide()
 	load_state()
-	#update_stats_menu()
+	update_stats_menu()
 	setHouse(null)
 
 func _on_move_end(dist: Vector2 = Vector2.ZERO, backward = true):
@@ -276,11 +259,15 @@ func attack(action: AttackAction, shadow: bool = true):
 
 func in_range(enemy: Enemy, dist: Vector2) -> bool:
 	if enemy.position.x < position.x + 16 || enemy.position.x > position.x - 16:
+		print("x first: in x")
 		if abs(position.y - enemy.position.y) <= dist.y + 16:
+			print("x first: in y")
 			print(enemy.position, position)
 			return true
 	if enemy.position.y < position.y + 16 || enemy.position.y > position.y - 16:
+		print("y first: in y")
 		if abs(position.x - enemy.position.x) <= dist.x + 16:
+			print("y first: in x")
 			return true
 	return false
 

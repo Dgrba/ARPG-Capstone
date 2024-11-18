@@ -270,16 +270,14 @@ func attack(action: AttackAction, shadow: bool = true):
 	var damage: int = _attack_damage()
 	for enemy in enemies:
 		if in_range(enemy, dist):
-			print("enemy health before: ", enemy.health)
-			print("damage: ", damage)
 			enemy.health -= damage
-			print("enemy health after: ", enemy.health)
 			hits.push_back(enemy)
 	action.set_undo(hits, damage)
 
 func in_range(enemy: Enemy, dist: Vector2) -> bool:
 	if enemy.position.x < position.x + 16 || enemy.position.x > position.x - 16:
 		if abs(position.y - enemy.position.y) <= dist.y + 16:
+			print(enemy.position, position)
 			return true
 	if enemy.position.y < position.y + 16 || enemy.position.y > position.y - 16:
 		if abs(position.x - enemy.position.x) <= dist.x + 16:
@@ -412,7 +410,6 @@ func save_state():
 	config.save(SaveFile)
 
 func load_state(SavePath: String = SaveFile):
-	print("loading from ", SavePath)
 	var config := ConfigFile.new()
 	var err = config.load(SavePath)
 	
@@ -427,18 +424,14 @@ func load_state(SavePath: String = SaveFile):
 	stats.set_stat(StatComponent.StatList.CONSTITUTION, config.get_value("Stats", "Constitution"))
 	stats.set_stat(StatComponent.StatList.AGILITY, config.get_value("Stats", "Agility"))
 	stats.set_stat(StatComponent.StatList.INTELLIGENCE, config.get_value("Stats", "Intelligence"))
-	stats.set_class_name(config.get_value("Stats", "Class", "Melee"))
-	print(stats.get_stats_all())
-	print(stats._stats)
 	
 	actionComponent.max_action = config.get_value("Moves", "MaxAction", 1)
 	actionComponent.max_bonus = config.get_value("Moves", "MaxBonus", 1)
 	actionComponent.max_movement = config.get_value("Moves", "MaxMovement", 1)
-	print("loading allowed actions")
 	actionComponent.allowedActions[Action.ActionCategory.Action] = config.get_value("Moves", "ActionAvailable", 1)
 	actionComponent.allowedActions[Action.ActionCategory.Bonus] = config.get_value("Moves", "BonusAvailable", 1)
 	actionComponent.allowedActions[Action.ActionCategory.Movement] = config.get_value("Moves", "MovementAvailable", 1)
-	print(actionComponent.allowedActions)
+
 	var health = get_node("HealthComponent") as HealthComponent
 	health.set_health(
 		config.get_value("Health", "CurrentHealth", 0),
@@ -478,7 +471,6 @@ func _on_player_hitbox_area_entered(area: Area2D) -> void:
 # TODO fix
 func take_arrow_damage(damage):
 	health = health - damage
-	print("Player health = ", health)
 	if health <= 0:
 		queue_free()
 		#$attack_cooldown.start()

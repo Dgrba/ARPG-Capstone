@@ -25,7 +25,6 @@ var _stats: Dictionary
 var _class: Class
 
 func _ready():
-	print(_stats)
 	pass
 
 func set_class_name(classname):
@@ -64,9 +63,7 @@ func stat_from_string(str: String) -> StatList:
 # if parameter target is not int, StatList or String returns "ERROR"
 # otherwise returns the interger value of the target stat
 func get_stat(target):
-	print(get_stats_all())
 	if typeof(target) == TYPE_STRING and _stats.has(stat_from_string(target)):
-		print("stat ", target, " is ", _stats[stat_from_string(target)])
 		return _stats[stat_from_string(target)]
 	elif typeof(target) == TYPE_INT and StatList.keys().has(target):
 		return _stats[StatList.keys()[target]]

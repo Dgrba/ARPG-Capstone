@@ -259,15 +259,12 @@ func attack(action: AttackAction, shadow: bool = true):
 
 func in_range(enemy: Enemy, dist: Vector2) -> bool:
 	if enemy.position.x < position.x + 16 || enemy.position.x > position.x - 16:
-		print("x first: in x")
 		if abs(position.y - enemy.position.y) <= dist.y + 16:
-			print("x first: in y")
-			print(enemy.position, position)
+			print("x first: ", enemy.position, position)
 			return true
 	if enemy.position.y < position.y + 16 || enemy.position.y > position.y - 16:
-		print("y first: in y")
 		if abs(position.x - enemy.position.x) <= dist.x + 16:
-			print("y first: in x")
+			print("x first: ", enemy.position, position)
 			return true
 	return false
 
@@ -412,17 +409,17 @@ func load_state(SavePath: String = SaveFile):
 	stats.set_stat(StatComponent.StatList.AGILITY, config.get_value("Stats", "Agility"))
 	stats.set_stat(StatComponent.StatList.INTELLIGENCE, config.get_value("Stats", "Intelligence"))
 	
-	actionComponent.max_action = config.get_value("Moves", "MaxAction", 1)
-	actionComponent.max_bonus = config.get_value("Moves", "MaxBonus", 1)
-	actionComponent.max_movement = config.get_value("Moves", "MaxMovement", 1)
-	actionComponent.allowedActions[Action.ActionCategory.Action] = config.get_value("Moves", "ActionAvailable", 1)
-	actionComponent.allowedActions[Action.ActionCategory.Bonus] = config.get_value("Moves", "BonusAvailable", 1)
-	actionComponent.allowedActions[Action.ActionCategory.Movement] = config.get_value("Moves", "MovementAvailable", 1)
+	actionComponent.max_action = config.get_value("Moves", "ActionMax")
+	actionComponent.max_bonus = config.get_value("Moves", "BonusMax")
+	actionComponent.max_movement = config.get_value("Moves", "MovementMax")
+	actionComponent.allowedActions[Action.ActionCategory.Action] = config.get_value("Moves", "ActionAvailable")
+	actionComponent.allowedActions[Action.ActionCategory.Bonus] = config.get_value("Moves", "BonusAvailable")
+	actionComponent.allowedActions[Action.ActionCategory.Movement] = config.get_value("Moves", "MovementAvailable")
 
 	var health = get_node("HealthComponent") as HealthComponent
 	health.set_health(
-		config.get_value("Health", "CurrentHealth", 0),
-		config.get_value("Health", "MaxHealth", 0)
+		config.get_value("Health", "CurrentHealth"),
+		config.get_value("Health", "MaxHealth")
 	)
 
 func load_defaults():

@@ -44,7 +44,6 @@ func _on_escape_button_pressed() -> void:
 #                        to old position and scene, the one before the encounter
 func win():
 	Global.in_combat = false
-	print("you won")
 	visible = false
 	pass
 

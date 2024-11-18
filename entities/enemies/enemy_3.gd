@@ -26,17 +26,13 @@ func _physics_process(delta):
 	#	wander_around(delta)
 	
 func on_player_turn_end():
-	print(self, " takes a turn")
 	move_enemy()
-	
-	print(self, " has finished its turn.")
 
 func move_enemy():
 	if wander_time <= 0:
 		var directions = [Vector2(1, 0), Vector2(-1, 0), Vector2(0, 1), Vector2(0, -1)]
 		wander_direction = directions[randi() % directions.size()]
 		wander_time = max_wander_time / 2
-		print("Random direction chosen:", wander_direction)
 	
 func play_movement_animation():
 	# Determine which animation to play based on wander_direction

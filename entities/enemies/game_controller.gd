@@ -9,7 +9,6 @@ func _ready():
 	player.turn_end.connect(_on_player_end_turn)
 
 func _on_enemy_death(enemy: Enemy):
-	print("removing enemy at: ", enemies.find(enemy))
 	if enemies.find(enemy) != -1:
 		enemies.remove_at(enemies.find(enemy))
 

@@ -21,6 +21,8 @@ var player_test = null
 var dead = false
 
 func _on_update_health(new_health: int):
+	if new_health < 0:
+		handle_death()
 	health = new_health
 	update_health()
 
@@ -35,10 +37,7 @@ var player_in_attack_zone = false  # Set to true/false in subclasses when player
 #var type = 1  # Default type can be overwritten in subclasses
 
 func on_player_turn_end():
-	print(self, " takes a turn")
-
-	print(self, " has finished its turn.")
-
+	pass
 
 
 

@@ -47,7 +47,6 @@ func _is_action_allowed(actionType: Action.ActionCategory) -> Action.ActionCateg
 		Action.ActionCategory.Action:
 			if allowedActions[actionType] > 0:
 				result = actionType
-				print("no_action")
 		Action.ActionCategory.Bonus:
 			if allowedActions[actionType] > 0:
 				result = actionType

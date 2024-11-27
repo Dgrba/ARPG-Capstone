@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://g0fmi3pl1bva"]
 
 [ext_resource type="Script" path="res://entities/player/subresources/poses/magic_pose.gd" id="1_dmaly"]
-[ext_resource type="Texture2D" uid="uid://csv57towpgxpb" path="res://art/characters/player.png" id="1_et5bf"]
+[ext_resource type="Texture2D" uid="uid://csv57towpgxpb" path="res://art/Art/characters/player.png" id="1_et5bf"]
 [ext_resource type="PackedScene" uid="uid://ch61urwc566ro" path="res://entities/player/subresources/MagicSpell.tscn" id="3_itub0"]
 
 [node name="MagicPose" type="Sprite2D"]

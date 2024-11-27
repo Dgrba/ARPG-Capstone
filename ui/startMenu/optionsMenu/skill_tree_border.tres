@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://bxkefducy01g2"]
 
-[ext_resource type="Texture2D" uid="uid://bm8jkaq2v0hhj" path="res://art/tilesets/borders/11 Border 01.png" id="1_i6i2i"]
+[ext_resource type="Texture2D" uid="uid://bm8jkaq2v0hhj" path="res://art/Art/tilesets/borders/11 Border 01.png" id="1_i6i2i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_amrjr"]
 texture = ExtResource("1_i6i2i")

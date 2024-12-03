@@ -13,6 +13,9 @@ func _on_enemy_death(enemy: Enemy):
 		enemies.remove_at(enemies.find(enemy))
 
 func _on_player_end_turn():
+	if enemies.size() == 0:
+		player.start_turn()
+		return
 	for enemy in enemies:
 		enemy.on_player_turn_end()
 	await get_tree().create_timer(wait_time_between_turns).timeout

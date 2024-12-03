@@ -51,7 +51,7 @@ func stat_from_string(str: String) -> StatList:
 			return StatList.STRENGTH
 		"dexterity":
 			return StatList.DEXTERITY
-		"constitiution":
+		"constitution":
 			return StatList.CONSTITUTION
 		"agility":
 			return StatList.AGILITY
@@ -85,24 +85,22 @@ func get_stats_all():
 
 # for manual initialization or hard scripting
 func set_stat(target, value: int):
-	value = _on_stat_changed(target, value)
-	_stats[StatList.keys()[target]] = value
+	_on_stat_changed(target, value)
 
 # modifies the target stat by value
 # use negative to decrease
 func modify_stat(target: StatList, value: int):
-	var new_value = _stats[StatList.keys()[target]] + value
-	new_value = _on_stat_changed(target, new_value)
-	_stats[StatList.keys()[target]] = new_value
+	var new_value = _stats[target] + value
+	_on_stat_changed(target, value)
 
 # this function allows error checking and signals on stat changes
 # it must be manually placed in functions which change stats
 # this function is why I made _stats private
 # it returns an approved value for target, after sanity checking
-func _on_stat_changed(target: StatList, value: int) -> int:
+func _on_stat_changed(target: StatList, value: int):
 	if !_stats.has(target):
 		_stats[target] = value
-		return value
+		return
 	var current_value = _stats[target]
 	if value < 1 && current_value != 0:
 		stat_hit_zero.emit(target)
@@ -110,4 +108,6 @@ func _on_stat_changed(target: StatList, value: int) -> int:
 		stat_no_longer_zero.emit(target)
 	if value < 1:
 		value = 0
-	return value
+	else:
+		value += current_value
+	_stats[target] = value

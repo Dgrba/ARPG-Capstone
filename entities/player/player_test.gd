@@ -206,10 +206,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		debug()
 
 func debug():
-	if active:
-		healthComponent.set_health(0)
-	else:
-		healthComponent.set_health(healthComponent._maxHealth)
+	statComponent.modify_stat(0, 1)
+	update_stats_menu()
+	#if active:
+		#healthComponent.set_health(0)
+	#else:
+		#healthComponent.set_health(healthComponent._maxHealth)
 
 # logic for dealing with player death; connected to death signal in _ready()
 func _on_player_death():

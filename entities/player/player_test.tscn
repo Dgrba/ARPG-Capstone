@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://dg8ie22gykgq7"]
 
 [ext_resource type="Script" path="res://entities/player/player_test.gd" id="1_kupnk"]
-[ext_resource type="Texture2D" uid="uid://csv57towpgxpb" path="res://art/characters/player.png" id="2_54qsg"]
+[ext_resource type="Texture2D" uid="uid://csv57towpgxpb" path="res://art/Art/characters/player.png" id="2_54qsg"]
 [ext_resource type="PackedScene" uid="uid://cxv6nbj0j87ye" path="res://ui/startMenu/optionsMenu/skilltree.tscn" id="2_hacuq"]
 [ext_resource type="PackedScene" uid="uid://ch61urwc566ro" path="res://entities/player/subresources/MagicSpell.tscn" id="2_snbej"]
 [ext_resource type="PackedScene" uid="uid://d2wmhvljuw4lf" path="res://entities/components/MovementComponent.tscn" id="3_k2atb"]
@@ -293,7 +293,6 @@ frame = 1
 shape = SubResource("CircleShape2D_aac1x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="SkillTree" parent="CanvasLayer" instance=ExtResource("2_hacuq")]
 size_flags_horizontal = 3

@@ -206,7 +206,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		debug()
 
 func debug():
-	statComponent.modify_stat(0, 1)
+	statComponent.modify_stat(0, 0)
 	update_stats_menu()
 	#if active:
 		#healthComponent.set_health(0)

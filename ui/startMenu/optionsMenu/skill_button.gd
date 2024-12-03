@@ -8,6 +8,7 @@ extends TextureButton
 @onready var health: HealthComponent = player.healthComponent
 #variable to access player movement features
 @onready var movement: MovementComponent = player.moveComponent
+#variable to access player action feautures
 @onready var action: ActionComponent = player.actionComponent
 
 #declare labels
@@ -31,6 +32,7 @@ var pad = Vector2(5, 5)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.tokens = 6
 	health.set_health(100, 100) #TODO remove this initialization when testing is over
 	print("health: ", health._health, "/", health._maxHealth)
 
@@ -44,7 +46,7 @@ func resize_panel() -> void:
 	skill_button_label.size = skill_button_label.get_minimum_size() + pad
 
 # Function to change player stats based on which skill button is pressed
-func _on_button_toggled(toggled_on: bool, button: StringName) -> void: 
+func _on_toggled(toggled_on: bool, button: StringName) -> void: 
 	if(toggled_on):
 		if(player.tokens > 0):
 			match button:
@@ -54,16 +56,16 @@ func _on_button_toggled(toggled_on: bool, button: StringName) -> void:
 						print("New health: ", health._health, "/", health._maxHealth)
 						player.tokens -= 1
 				"Dash":
-						player.max_movement *= 2
-						print("New speed: ", player.max_movement)
+						action.max_movement *= 2
+						print("New speed: ", action.max_movement)
 						player.tokens -= 1
 				"Berserker":
 						action.max_action += 1
-						print("New speed: ", player.max_action)
+						print("New action: ", action.max_action)
 						player.tokens -= 1
 				"Destructive":
-						stats.modify_stat(StatComponent.StatList.STRENGTH, 5)
-						print("New Strength: ", stats.get_stat(StatComponent.StatList.STRENGTH))
+						stats.modify_stat(0, 5)
+						print("New Strength: ", stats.get_stat(0))
 						player.tokens -= 1
 				"Resurrection":
 						health.revive = 1
@@ -133,15 +135,15 @@ func _on_button_toggled(toggled_on: bool, button: StringName) -> void:
 						print("New health: ", health._health, "/", health._maxHealth)
 						player.tokens += 1
 				"Dash":
-						player.max_movement /= 2
-						print("New speed: ", player.max_movement)
+						action.max_movement /= 2
+						print("New speed: ", action.max_movement)
 						player.tokens += 1
 				"Berserker":
-						player.max_action -= 1
-						print("New speed: ", player.max_action)
+						action.max_action -= 1
+						print("New action: ", action.max_action)
 						player.tokens += 1
 				"Destructive":
-						stats.modify_stat(StatComponent.StatList.STRENGTH, -5)
+						stats.modify_stat(0, -5)
 						print("New Strength: ", stats.get_stat(StatComponent.StatList.STRENGTH))
 						player.tokens += 1
 				"Resurrection":
@@ -207,3 +209,7 @@ func _on_mouse_exited(button: StringName) -> void:
 
 func _on_timer_timeout() -> void:
 	broke_label.visible = false
+
+func _input(ev):
+	if Input.is_key_pressed(KEY_E):
+		get_parent().visible = false

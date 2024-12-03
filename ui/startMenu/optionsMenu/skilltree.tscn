@@ -1,25 +1,25 @@
 [gd_scene load_steps=21 format=3 uid="uid://cxv6nbj0j87ye"]
 
 [ext_resource type="Theme" uid="uid://bxkefducy01g2" path="res://ui/startMenu/optionsMenu/skill_tree_border.tres" id="1_7jxbb"]
-[ext_resource type="Texture2D" uid="uid://ms0mmc2h3y26" path="res://Art/assets/icons/vigor1_icon.jpg" id="1_aqtbj"]
+[ext_resource type="Texture2D" uid="uid://ms0mmc2h3y26" path="res://art/Art/assets/icons/vigor1_icon.jpg" id="1_aqtbj"]
 [ext_resource type="Script" path="res://ui/startMenu/optionsMenu/skill_button.gd" id="2_eijqc"]
-[ext_resource type="Texture2D" uid="uid://ca83tnvisiij4" path="res://Art/assets/icons/vigor_icon_clicked.png" id="3_lx541"]
-[ext_resource type="Texture2D" uid="uid://dpqcb6nsp30uf" path="res://Art/assets/icons/dash_icon.jpg" id="3_ofgtm"]
-[ext_resource type="Texture2D" uid="uid://ba4c155mp56f3" path="res://Art/assets/icons/berserker_icon.jpg" id="4_wwxe3"]
-[ext_resource type="Texture2D" uid="uid://c61k46oal36ax" path="res://Art/assets/icons/destructive_icon.png" id="5_ncocp"]
-[ext_resource type="FontFile" uid="uid://d1h8kbaa6huqg" path="res://Art/assets/fonts/upheavtt.ttf" id="6_jdr5h"]
-[ext_resource type="Texture2D" uid="uid://tmpdvyrlsscw" path="res://Art/assets/icons/dash_icon_clicked.png" id="6_ndpk3"]
-[ext_resource type="Texture2D" uid="uid://cuthmfihy0wcn" path="res://Art/assets/icons/berserker_icon_clicked.png" id="8_8dk27"]
-[ext_resource type="Texture2D" uid="uid://c7smosw4v7eqf" path="res://Art/assets/icons/destructive_icon_clicked.png" id="10_jnj1m"]
+[ext_resource type="Texture2D" uid="uid://ca83tnvisiij4" path="res://art/Art/assets/icons/vigor_icon_clicked.png" id="3_lx541"]
+[ext_resource type="Texture2D" uid="uid://dpqcb6nsp30uf" path="res://art/Art/assets/icons/dash_icon.jpg" id="3_ofgtm"]
+[ext_resource type="Texture2D" uid="uid://ba4c155mp56f3" path="res://art/Art/assets/icons/berserker_icon.jpg" id="4_wwxe3"]
+[ext_resource type="Texture2D" uid="uid://c61k46oal36ax" path="res://art/assets/icons/destructive_icon.png" id="5_ncocp"]
+[ext_resource type="FontFile" uid="uid://d1h8kbaa6huqg" path="res://art/assets/fonts/upheavtt.ttf" id="6_jdr5h"]
+[ext_resource type="Texture2D" uid="uid://tmpdvyrlsscw" path="res://art/assets/icons/dash_icon_clicked.png" id="6_ndpk3"]
+[ext_resource type="Texture2D" uid="uid://cuthmfihy0wcn" path="res://art/Art/assets/icons/berserker_icon_clicked.png" id="8_8dk27"]
+[ext_resource type="Texture2D" uid="uid://c7smosw4v7eqf" path="res://art/assets/icons/destructive_icon_clicked.png" id="10_jnj1m"]
 [ext_resource type="Texture2D" uid="uid://dwug3de441l5j" path="res://art/assets/icons/resurrection_icon.png" id="11_x6h45"]
 [ext_resource type="Texture2D" uid="uid://blfhl5ybh3dl4" path="res://art/assets/icons/resurrection_icon_clicked.png" id="12_gog2l"]
-[ext_resource type="Texture2D" uid="uid://dbdxv3u05g6lt" path="res://Art/assets/icons/evasion_icon.png" id="13_lo6it"]
-[ext_resource type="Texture2D" uid="uid://ocf6vrqd5gak" path="res://Art/assets/icons/evasion_icon_clicked.png" id="14_tl8k7"]
+[ext_resource type="Texture2D" uid="uid://dbdxv3u05g6lt" path="res://art/assets/icons/evasion_icon.png" id="13_lo6it"]
+[ext_resource type="Texture2D" uid="uid://ocf6vrqd5gak" path="res://art/assets/icons/evasion_icon_clicked.png" id="14_tl8k7"]
 [ext_resource type="Texture2D" uid="uid://cauhj1v6vuhyi" path="res://art/assets/icons/resilient_icon.png" id="15_q3a3q"]
 [ext_resource type="Texture2D" uid="uid://dn5sm1q2kicup" path="res://art/assets/icons/resilient_icon_clicked.png" id="16_rhxqx"]
-[ext_resource type="Texture2D" uid="uid://8mxyduugocv6" path="res://Art/assets/icons/thaumaturgy_icon.png" id="17_l446g"]
-[ext_resource type="Texture2D" uid="uid://b1w8x6y56cqgq" path="res://Art/assets/icons/thaumaturgy_icon_clicked.png" id="18_df18y"]
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://Art/assets/fonts/PixelOperator8.ttf" id="20_se6sk"]
+[ext_resource type="Texture2D" uid="uid://8mxyduugocv6" path="res://art/Art/assets/icons/thaumaturgy_icon.png" id="17_l446g"]
+[ext_resource type="Texture2D" uid="uid://b1w8x6y56cqgq" path="res://art/Art/assets/icons/thaumaturgy_icon_clicked.png" id="18_df18y"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://art/Art/assets/fonts/PixelOperator8.ttf" id="20_se6sk"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -414,6 +414,23 @@ theme_override_fonts/font = ExtResource("6_jdr5h")
 theme_override_font_sizes/font_size = 65
 text = "Skills"
 
+[node name="ExitLabel" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.985
+anchor_right = 0.5
+anchor_bottom = 0.985
+offset_left = -172.25
+offset_top = -30.78
+offset_right = 171.75
+offset_bottom = 0.219971
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("20_se6sk")
+theme_override_font_sizes/font_size = 20
+text = "Press 'E' to exit menu"
+
 [node name="CurrencyLabel" type="Label" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -451,4 +468,28 @@ unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
+[connection signal="mouse_entered" from="Background/VigorButton" to="Background/VigorButton" method="_on_mouse_entered" binds= [&"Vigor"]]
+[connection signal="mouse_exited" from="Background/VigorButton" to="Background/VigorButton" method="_on_mouse_exited" binds= [&"Vigor"]]
+[connection signal="toggled" from="Background/VigorButton" to="Background/VigorButton" method="_on_toggled" binds= [&"Vigor"]]
+[connection signal="mouse_entered" from="Background/DashButton" to="Background/DashButton" method="_on_mouse_entered" binds= [&"Dash"]]
+[connection signal="mouse_exited" from="Background/DashButton" to="Background/DashButton" method="_on_mouse_exited" binds= [&"Dash"]]
+[connection signal="toggled" from="Background/DashButton" to="Background/DashButton" method="_on_toggled" binds= [&"Dash"]]
+[connection signal="mouse_entered" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_mouse_entered" binds= [&"Berserker"]]
+[connection signal="mouse_exited" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_mouse_exited" binds= [&"Berserker"]]
+[connection signal="toggled" from="Background/BerserkerButton" to="Background/BerserkerButton" method="_on_toggled" binds= [&"Berserker"]]
+[connection signal="mouse_entered" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_mouse_entered" binds= [&"Destructive"]]
+[connection signal="mouse_exited" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_mouse_exited" binds= [&"Destructive"]]
+[connection signal="toggled" from="Background/DestructiveButton" to="Background/DestructiveButton" method="_on_toggled" binds= [&"Destructive"]]
+[connection signal="mouse_entered" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_mouse_entered" binds= [&"Resurrection"]]
+[connection signal="mouse_exited" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_mouse_exited" binds= [&"Resurrection"]]
+[connection signal="toggled" from="Background/ResurrectionButton" to="Background/ResurrectionButton" method="_on_toggled" binds= [&"Resurrection"]]
+[connection signal="mouse_entered" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_mouse_entered" binds= [&"Evasive"]]
+[connection signal="mouse_exited" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_mouse_exited" binds= [&"Evasive"]]
+[connection signal="toggled" from="Background/EvasiveButton" to="Background/EvasiveButton" method="_on_toggled" binds= [&"Evasive"]]
+[connection signal="mouse_entered" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_mouse_entered" binds= [&"Resilient"]]
+[connection signal="mouse_exited" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_mouse_exited" binds= [&"Resilient"]]
+[connection signal="toggled" from="Background/ResilientButton" to="Background/ResilientButton" method="_on_toggled" binds= [&"Resilient"]]
+[connection signal="mouse_entered" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_mouse_entered" binds= [&"Thaumaturgy"]]
+[connection signal="mouse_exited" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_mouse_exited" binds= [&"Thaumaturgy"]]
+[connection signal="toggled" from="Background/ThaumaturgyButton" to="Background/ThaumaturgyButton" method="_on_toggled" binds= [&"Thaumaturgy"]]
 [connection signal="timeout" from="Background/BrokeLabel/BrokeTimer" to="Background/VigorButton" method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cobx24dhtrj0d"]
+[gd_scene load_steps=6 format=3 uid="uid://bbare5010rxjq"]
 
 [ext_resource type="Texture2D" uid="uid://b15mkgmpjqops" path="res://art/png/Dungeon.png" id="1_upfds"]
 [ext_resource type="PackedScene" uid="uid://d1k828k1turw8" path="res://world/hub/interiors/Dungeon_inside.tscn" id="2_smu7e"]

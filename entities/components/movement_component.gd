@@ -79,7 +79,7 @@ func move_direction(direction: String, backward: bool = false, shadow: bool = tr
 	if !ray.is_colliding():
 		var tween = create_tween()
 		tween.tween_property(self, "pos",
-			pos + dist, 1.0/anim_speed).set_trans(Tween.TRANS_LINEAR)
+			position + dist, 1.0/anim_speed).set_trans(Tween.TRANS_LINEAR)
 		moving = true
 		await tween.finished
 		moving = false
@@ -90,7 +90,13 @@ func move_direction(direction: String, backward: bool = false, shadow: bool = tr
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pos = get_parent().position
+	if (get_tree().get_current_scene().get_name() == "Hub" ):
+		if(Global.last_location == Vector2(0,0)):
+			pos = get_parent().position
+		else:
+			pos = Global.last_location
+	else:
+		pos = get_parent().position
 
 func is_moving():
 	return moving

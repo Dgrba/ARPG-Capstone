@@ -135,11 +135,11 @@ sources/1 = SubResource("TileSetAtlasSource_8c0dv")
 sources/2 = SubResource("TileSetAtlasSource_0ffdf")
 sources/3 = SubResource("TileSetAtlasSource_juarc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iaeu"]
-size = Vector2(12, 11.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqu0d"]
-size = Vector2(32, 20)
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fadk"]
+size = Vector2(16, 8)
 
 [node name="square_base_fire" type="Node2D"]
 script = ExtResource("1_kw4yb")
@@ -157,6 +157,7 @@ tile_map_data = PackedByteArray("AAAAAPr/AAADAAIAAAAAAPv/AAADAAIAAAAAAPz/AAADAAI
 tile_set = SubResource("TileSet_qfj3p")
 
 [node name="Decorations" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+//n/AAAEAAcAAAABAPn/AAAEAAcAAAAFAPr/AAAHAAcAAAD6/wUAAAAHAAcAAAAFAAUAAAAIAAYAAAD6//r/AAAIAAYAAAD6//v/AAABAAkAAAD6/wQAAAABAAkAAAAFAAQAAAABAAkAABAFAPv/AAABAAkAABA=")
 tile_set = SubResource("TileSet_dxkag")
 
 [node name="Hazards" type="TileMapLayer" parent="."]
@@ -169,148 +170,152 @@ position = Vector2(0, -112)
 [node name="enemy_spawn_large_square_room" parent="." instance=ExtResource("7_tj6k7")]
 
 [node name="player_test" parent="." instance=ExtResource("5_iy56e")]
-position = Vector2(45, -14)
+position = Vector2(-8, 88)
+
+[node name="exit" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(0, -120)
+shape = SubResource("RectangleShape2D_aqu0d")
 
 [node name="fire" type="Area2D" parent="."]
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 60)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="fire"]
-position = Vector2(24, 92)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="fire"]
-position = Vector2(-57, 44)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, 91)
-shape = SubResource("RectangleShape2D_5iaeu")
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fire"]
-position = Vector2(-56, 60)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(56, 76)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fire"]
+position = Vector2(56, 60)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="fire"]
+position = Vector2(56, 92)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, 76)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, 60)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, 92)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, -68)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, -84)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, -52)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="fire"]
+position = Vector2(24, 76)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 45)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(24, 60)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="fire"]
+position = Vector2(24, 92)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 30)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(56, 28)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="fire"]
+position = Vector2(56, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 13)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(56, 44)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="fire"]
-position = Vector2(8, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(-56, 60)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="fire"]
-position = Vector2(24, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(-56, 44)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="fire"]
-position = Vector2(40, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(-56, 76)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="fire"]
+position = Vector2(-56, 12)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="fire"]
+position = Vector2(-56, 28)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="fire"]
+position = Vector2(-24, 12)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="fire"]
+position = Vector2(-40, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="fire"]
-position = Vector2(-9, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(-8, -52)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="fire"]
-position = Vector2(-40, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(24, -52)
+shape = SubResource("RectangleShape2D_0fadk")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="fire"]
+position = Vector2(8, -52)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(-8, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, 60)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(24, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="fire"]
-position = Vector2(-56, 28)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="fire"]
-position = Vector2(-56, 12)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D31" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, 76)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D32" type="CollisionShape2D" parent="fire"]
-position = Vector2(-9, -53)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D33" type="CollisionShape2D" parent="fire"]
-position = Vector2(8, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D34" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D35" type="CollisionShape2D" parent="fire"]
-position = Vector2(24, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D37" type="CollisionShape2D" parent="fire"]
-position = Vector2(40, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D38" type="CollisionShape2D" parent="fire"]
-position = Vector2(-56, 77)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D45" type="CollisionShape2D" parent="fire"]
-position = Vector2(72, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D47" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, -68)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D49" type="CollisionShape2D" parent="fire"]
-position = Vector2(-24, -84)
-shape = SubResource("RectangleShape2D_5iaeu")
-
-[node name="CollisionShape2D52" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, -52)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="fire"]
-position = Vector2(24, 76)
-shape = SubResource("RectangleShape2D_5iaeu")
+position = Vector2(40, -52)
+shape = SubResource("RectangleShape2D_0fadk")
 
-[node name="CollisionShape2D54" type="CollisionShape2D" parent="fire"]
-position = Vector2(24, 61)
-shape = SubResource("RectangleShape2D_5iaeu")
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="fire"]
+position = Vector2(72, -52)
+shape = SubResource("RectangleShape2D_0fadk")
 
-[node name="CollisionShape2D55" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 76)
-shape = SubResource("RectangleShape2D_5iaeu")
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="fire"]
+position = Vector2(56, -52)
+shape = SubResource("RectangleShape2D_0fadk")
 
-[node name="CollisionShape2D56" type="CollisionShape2D" parent="fire"]
-position = Vector2(56, 91)
-shape = SubResource("RectangleShape2D_5iaeu")
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="fire"]
+position = Vector2(40, 12)
+shape = SubResource("RectangleShape2D_0fadk")
 
 [node name="Timer" type="Timer" parent="fire"]
 autostart = true
 
-[node name="exit" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(0, -129)
-shape = SubResource("RectangleShape2D_aqu0d")
-
-[connection signal="area_shape_entered" from="fire" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="area_shape_exited" from="fire" to="." method="_on_area_2d_area_shape_exited"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="fire" to="." method="_on_fire_body_entered"]
+[connection signal="body_exited" from="fire" to="." method="_on_fire_body_exited"]
 [connection signal="timeout" from="fire/Timer" to="." method="_on_timer_timeout"]
-[connection signal="area_shape_entered" from="exit" to="." method="_on_exit_area_shape_entered"]

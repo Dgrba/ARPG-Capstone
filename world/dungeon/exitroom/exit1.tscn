@@ -442,12 +442,14 @@ tile_map_data = PackedByteArray("AAD6/wAAAQASAA0AAAAEAAAAAQAMAA0AAAD0/wAAAQAMAA0
 tile_set = SubResource("TileSet_gbg5h")
 
 [node name="player_test" parent="." instance=ExtResource("3_ciabb")]
-position = Vector2(-3, 173)
+position = Vector2(-16, 184)
 
 [node name="exit" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 position = Vector2(-0.25, 34)
 shape = SubResource("RectangleShape2D_643t4")
 
-[connection signal="area_shape_entered" from="exit" to="." method="_on_exit_area_shape_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

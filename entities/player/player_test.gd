@@ -132,7 +132,6 @@ func get_or_default(json: JSON, target: String, default):
 func _ready() -> void:
 	load_state()
 	update_stats_menu()
-	setHouse(null)
 
 func _on_move_end(dist: Vector2 = Vector2.ZERO, backward = true):
 	update_stats_menu()
@@ -196,8 +195,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif in_combat and event.is_action_pressed("attack_enemy") && actionComponent.can_use_action(Action.ActionCategory.Action):
 		var action = actionComponent.use_action(Action.ActionCategory.Action, event)
 		attack(action as AttackAction)
-	elif event is InputEventKey and event.is_action_pressed("interact") and house != null:
-		house.enter()
 	elif event.is_action_pressed("debug"):
 		debug()
 
@@ -224,18 +221,6 @@ func _on_resurrection():
 
 func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
-
-#Script For Key Press on house
-var house :set = setHouse
-
-func setHouse(newHouse):
-	if newHouse != null:
-		$Key.show()
-		$KeyPrompt.play("KeyPrompt")
-	else:
-		$Key.hide()
-		$KeyPrompt.stop()
-	house = newHouse
 
 func is_magic() -> bool:
 	if statComponent.get_class_name() == StatComponent.Class.Mage:

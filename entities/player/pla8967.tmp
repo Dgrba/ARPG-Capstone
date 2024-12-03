@@ -235,7 +235,6 @@ magicSpell = NodePath("MagicSpell")
 [node name="MagicSpell" parent="." instance=ExtResource("2_snbej")]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-physics_interpolation_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

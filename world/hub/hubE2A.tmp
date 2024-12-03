@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bn43d2a4wwx48"]
+[gd_scene load_steps=19 format=4 uid="uid://bn43d2a4wwx48"]
 
 [ext_resource type="Script" path="res://world/hub/hub.gd" id="1_8inj8"]
 [ext_resource type="PackedScene" uid="uid://bisrc8085qsbk" path="res://ui/pauseMenu/pause_menu.tscn" id="2_ks2li"]
@@ -289,15 +289,6 @@ texture = ExtResource("4_gktuw")
 sources/0 = SubResource("TileSetAtlasSource_g1dai")
 sources/1 = SubResource("TileSetAtlasSource_vnqht")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w4fm"]
-size = Vector2(49.6224, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13bv2"]
-size = Vector2(36.4573, 12.0215)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pr3n"]
-size = Vector2(32, 9)
-
 [node name="Hub" type="Node2D"]
 scale = Vector2(0.987457, 0.998217)
 script = ExtResource("1_8inj8")
@@ -332,27 +323,3 @@ tile_set = SubResource("TileSet_mljol")
 
 [node name="player_test" parent="CanvasLayer" instance=ExtResource("11_4kb4s")]
 position = Vector2(290, 392)
-
-[node name="dungeonBuildingArea" type="Area2D" parent="CanvasLayer"]
-scale = Vector2(0.987457, 0.998217)
-
-[node name="dungeonBuildingCollision" type="CollisionShape2D" parent="CanvasLayer/dungeonBuildingArea"]
-position = Vector2(485.591, 348.622)
-shape = SubResource("RectangleShape2D_6w4fm")
-
-[node name="magicShopArea" type="Area2D" parent="CanvasLayer"]
-scale = Vector2(0.987457, 0.998217)
-
-[node name="magicShopCollision" type="CollisionShape2D" parent="CanvasLayer/magicShopArea"]
-position = Vector2(299.76, 159.284)
-shape = SubResource("RectangleShape2D_13bv2")
-
-[node name="itemShopArea" type="Area2D" parent="CanvasLayer"]
-
-[node name="itemShopCollision" type="CollisionShape2D" parent="CanvasLayer/itemShopArea"]
-position = Vector2(80, 351)
-shape = SubResource("RectangleShape2D_0pr3n")
-
-[connection signal="body_entered" from="CanvasLayer/dungeonBuildingArea" to="." method="_on_dungeon_building_area_body_entered"]
-[connection signal="body_entered" from="CanvasLayer/magicShopArea" to="." method="_on_magic_shop_area_body_entered"]
-[connection signal="body_entered" from="CanvasLayer/itemShopArea" to="." method="_on_item_shop_area_body_entered"]

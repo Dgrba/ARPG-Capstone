@@ -82,7 +82,7 @@ texture = ExtResource("2_y2ulk")
 sources/0 = SubResource("TileSetAtlasSource_jn0aq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7sui"]
-size = Vector2(38, 20)
+size = Vector2(32, 16)
 
 [node name="Entry2" type="Node2D"]
 position = Vector2(-1, 0)
@@ -105,12 +105,14 @@ tile_map_data = PackedByteArray("AAD9//v/AAAFAAkAAAACAPv/AAAFAAkAAAD+//r/AAAEAAc
 tile_set = SubResource("TileSet_w5fq6")
 
 [node name="exit" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(1, -109)
+position = Vector2(1, -104)
 shape = SubResource("RectangleShape2D_a7sui")
 
 [node name="player_test" parent="." instance=ExtResource("3_y01ob")]
 position = Vector2(0, -24)
 
-[connection signal="area_shape_entered" from="exit" to="." method="_on_exit_area_shape_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

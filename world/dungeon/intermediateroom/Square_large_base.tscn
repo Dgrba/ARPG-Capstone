@@ -136,7 +136,7 @@ sources/2 = SubResource("TileSetAtlasSource_0ffdf")
 sources/3 = SubResource("TileSetAtlasSource_juarc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8aqk"]
-size = Vector2(34, 20)
+size = Vector2(32, 16)
 
 [node name="square_base_large" type="Node2D"]
 script = ExtResource("1_kgkp6")
@@ -154,6 +154,7 @@ tile_map_data = PackedByteArray("AADw//D/AAAAAAAAAADx//D/AAACAAAAAADy//D/AAADAAA
 tile_set = SubResource("TileSet_23anj")
 
 [node name="Decorations" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAOAA4AAAAHAAcAAADx//H/AAAHAAcAAAAOAPH/AAAIAAYAAADx/w4AAAAIAAYAAAD+//D/AAAEAAcAAAABAPD/AAAEAAcAAADx////AAABAAkAAADx/wMAAAABAAkAAAAOAAEAAAABAAkAABAOAPb/AAABAAkAABA=")
 tile_set = SubResource("TileSet_dxkag")
 
 [node name="Hazards" type="TileMapLayer" parent="."]
@@ -168,9 +169,11 @@ position = Vector2(0, 232)
 position = Vector2(0, -256)
 
 [node name="exit" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(0, -271)
+position = Vector2(0, -264)
 shape = SubResource("RectangleShape2D_i8aqk")
 
-[connection signal="area_shape_entered" from="exit" to="." method="_on_exit_area_shape_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

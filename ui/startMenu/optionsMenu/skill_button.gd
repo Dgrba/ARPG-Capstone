@@ -8,6 +8,7 @@ extends TextureButton
 @onready var health: HealthComponent = player.healthComponent
 #variable to access player movement features
 @onready var movement: MovementComponent = player.moveComponent
+@onready var action: ActionComponent = player.actionComponent
 
 #declare labels
 @onready var vigor_label = %VigorLabel
@@ -57,7 +58,7 @@ func _on_button_toggled(toggled_on: bool, button: StringName) -> void:
 						print("New speed: ", player.max_movement)
 						player.tokens -= 1
 				"Berserker":
-						player.max_action += 1
+						action.max_action += 1
 						print("New speed: ", player.max_action)
 						player.tokens -= 1
 				"Destructive":

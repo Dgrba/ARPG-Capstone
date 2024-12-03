@@ -331,7 +331,7 @@ tile_map_data = PackedByteArray("AAASAAkAAAAAAAoAAAAUAAkAAAABAAoAAAATAAkAAAABAAo
 tile_set = SubResource("TileSet_mljol")
 
 [node name="player_test" parent="CanvasLayer" instance=ExtResource("11_4kb4s")]
-position = Vector2(290, 392)
+position = Vector2(298, 396)
 
 [node name="dungeonBuildingArea" type="Area2D" parent="CanvasLayer"]
 scale = Vector2(0.987457, 0.998217)

@@ -64,8 +64,8 @@ func _on_toggled(toggled_on: bool, button: StringName) -> void:
 						print("New action: ", action.max_action)
 						player.tokens -= 1
 				"Destructive":
-						stats.modify_stat(0, 5)
-						print("New Strength: ", stats.get_stat(0))
+						stats.modify_stat(StatComponent.StatList.STRENGTH, 5)
+						print("New Strength: ", stats.get_stat("strength"))
 						player.tokens -= 1
 				"Resurrection":
 						health.revive = 1
@@ -73,15 +73,15 @@ func _on_toggled(toggled_on: bool, button: StringName) -> void:
 						player.tokens -= 1
 				"Evasive":
 						stats.modify_stat(StatComponent.StatList.AGILITY, 5)
-						print("New Agility: ", stats.get_stat(StatComponent.StatList.AGILITY))
+						print("New Agility: ", stats.get_stat("agility"))
 						player.tokens -= 1
 				"Resilient":
 						stats.modify_stat(StatComponent.StatList.CONSTITUTION, 5)
-						print("New Constitution: ", stats.get_stat(StatComponent.StatList.CONSTITUTION))
+						print("New Constitution: ", stats.get_stat("constitution"))
 						player.tokens -= 1
 				"Thaumaturgy":
 						stats.modify_stat(StatComponent.StatList.INTELLIGENCE, 5)
-						print("New Intelligence: ", stats.get_stat(StatComponent.StatList.INTELLIGENCE))
+						print("New Intelligence: ", stats.get_stat("intelligence"))
 						player.tokens -= 1
 						
 		else: #IF TOGGLED ON AND PLAYER TOKENS ARE 0
@@ -143,8 +143,8 @@ func _on_toggled(toggled_on: bool, button: StringName) -> void:
 						print("New action: ", action.max_action)
 						player.tokens += 1
 				"Destructive":
-						stats.modify_stat(0, -5)
-						print("New Strength: ", stats.get_stat(StatComponent.StatList.STRENGTH))
+						stats.modify_stat(StatComponent.StatList.STRENGTH, -5)
+						print("New Strength: ", stats.get_stat("strength"))
 						player.tokens += 1
 				"Resurrection":
 						health.revive = 0
@@ -152,15 +152,15 @@ func _on_toggled(toggled_on: bool, button: StringName) -> void:
 						player.tokens += 1
 				"Evasive":
 						stats.modify_stat(StatComponent.StatList.AGILITY, -5)
-						print("New Agility: ", stats.get_stat(StatComponent.StatList.AGILITY))
+						print("New Agility: ", stats.get_stat("agility"))
 						player.tokens += 1
 				"Resilient":
 						stats.modify_stat(StatComponent.StatList.CONSTITUTION, -5)
-						print("New Constitution: ", stats.get_stat(StatComponent.StatList.CONSTITUTION))
+						print("New Constitution: ", stats.get_stat("constitution"))
 						player.tokens += 1
 				"Thaumaturgy":
 						stats.modify_stat(StatComponent.StatList.INTELLIGENCE, -5)
-						print("New Intelligence: ", stats.get_stat(StatComponent.StatList.INTELLIGENCE))
+						print("New Intelligence: ", stats.get_stat("intelligence"))
 						player.tokens += 1
 
 

@@ -293,6 +293,7 @@ frame = 1
 shape = SubResource("CircleShape2D_aac1x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="SkillTree" parent="CanvasLayer" instance=ExtResource("2_hacuq")]
 size_flags_horizontal = 3

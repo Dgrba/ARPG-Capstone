@@ -222,7 +222,7 @@ radius = 7.0
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_kupnk")
-status_menu = NodePath("StatsMenu")
+status_menu = NodePath("MenuCanvas/StatsMenu")
 anim = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 healthComponent = NodePath("HealthComponent")
@@ -304,11 +304,14 @@ visible = false
 position = Vector2(48, -300)
 player = NodePath("..")
 
-[node name="StatsMenu" parent="." instance=ExtResource("9_atnly")]
-offset_left = 300.0
-offset_top = -100.0
-offset_right = 300.0
-offset_bottom = -100.0
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+
+[node name="StatsMenu" parent="MenuCanvas" instance=ExtResource("9_atnly")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

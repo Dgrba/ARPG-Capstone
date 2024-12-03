@@ -57,6 +57,8 @@ const DefaultSaveData = "res://entities/player/DefaultData.ini"
 @export var shadowComponent: ShadowComponent
 @export var actionComponent: ActionComponent
 @export var magicSpell: Sprite2D
+@onready var menuCanvas = $MenuCanvas
+@onready var statsMenu = $MenuCanvas/StatsMenu
 
 var enemies: Array[Enemy] = []
 var player_turn: bool = true
@@ -130,6 +132,7 @@ func get_or_default(json: JSON, target: String, default):
 	return res
 
 func _ready() -> void:
+	statsMenu.hide()
 	load_state()
 	update_stats_menu()
 
@@ -170,6 +173,10 @@ func  play_movement_anim(direction: String, backward):
 
 # TODO a more graceful handling for use_action would be nice
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		menuCanvas.add_child(preload("res://ui/pauseMenu/pause_menu.tscn").instantiate())
+	elif event.is_action_pressed("toggle_stats_menu"):
+		statsMenu.show()
 	if !player_turn || moveComponent.is_moving():
 		return
 	var is_movement = event.is_action_pressed("move_left") || event.is_action_pressed("move_down") || event.is_action_pressed("move_right") || event.is_action_pressed("move_up")

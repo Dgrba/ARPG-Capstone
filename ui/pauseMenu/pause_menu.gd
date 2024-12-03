@@ -18,4 +18,4 @@ func _on_resume_button_down():
 
 func _on_exit_button_down():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_file("res://ui/startMenu/start_menu.tscn")

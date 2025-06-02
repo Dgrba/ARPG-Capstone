@@ -10,4 +10,4 @@ My contributions to the game involved designing, building, and displaying the Pl
 
 My contributed files: **skill_button.gd**, **skilltree.tscn**
 
-***![Video Demonstration of Skill Tree Features](https://youtu.be/7E_88o3A-94)***
+***[![Video Demonstration of Skill Tree Features:](https://img.youtube.com/vi/7E_88o3A-94/0.jpg)](https://www.youtube.com/watch?v=7E_88o3A-94)***

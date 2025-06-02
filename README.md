@@ -6,6 +6,6 @@ The project required creating the game while utilizing AGILE development methods
 - sheduling meetings to discuss progress and development changes
 - cataloging develpoment progress
 
-My contributions to the game involved designing, bulding, and displaying the Player Skill Tree UI which presented the player with available skills that would change their player stats and abilities. 
+My contributions to the game involved designing, building, and displaying the Player Skill Tree UI which presented the player with available skills that would change their player stats and abilities. 
 
 **My contributed files**: skill_button.gd, skilltree.tscn
